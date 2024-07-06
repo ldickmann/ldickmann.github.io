@@ -1,0 +1,71 @@
+/* -- Cor de fundo page -- */
+body {
+  background-color: #ffffff;
+}
+/* -- Estilos da navbar -- */
+.navbar {
+  background-color: white !important; 
+  width: 90%;
+  max-width: 1200px !important;
+  margin: 0 auto;
+  border-radius: 10px !important;
+}
+/* -- Justificação da navbar -- */
+.justify-content-between {
+  justify-content: space-between !important;
+}
+/* -- Ajusta o espaçamento superior da navbar -- */
+.fixed-top {
+  top: 20px !important;
+}
+/* -- Seções coloridas -- */
+.green-section, .black-section {
+  min-height: 50vh;
+  padding-top: 20px;
+  color: #FFF;
+}
+.green-section {
+  background-color: #027333;
+}
+.black-section {
+  background-color: black;
+}
+
+.verde-selection {
+  background-color: #0B2E17;
+  color: #FFF;
+  min-height: 50vh;
+}
+/* -- Animação -- */
+h6::after {
+  content: '|';
+  margin-left: 5px;
+  opacity: 1;
+  animation: piscar .7s infinite;
+}
+@keyframes piscar {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+/* -- Estilo Rodapé -- */
+#footer {
+  background-color: #11351a;
+  color: #ffffff;
+  border-top: 1px solid #ffffff;
+}
+
+#footer .nav-link {
+  color: #000000;
+}
+/* -- Estilo dos links no rodapé -- */
+#footer a {
+  text-decoration: none;
+  color: white;
+}
+#footer a:hover {
+  color: #0d6efd;
+}
