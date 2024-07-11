@@ -10,28 +10,40 @@ body {
   margin: 0 auto;
   border-radius: 10px !important;
 }
-/* -- Justificação da navbar -- */
-.justify-content-between {
-  justify-content: space-between !important;
+/* -- responsividade navbar -- */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .navbar {
+    width: auto !important;
+  }
+}
+@media (max-width: 425px) {
+  .navbar {
+    width: auto !important;
+  }
 }
 /* -- Ajusta o espaçamento superior da navbar -- */
 .fixed-top {
   top: 20px !important;
 }
 /* -- Seções coloridas -- */
-.green-section, .black-section {
+#green-section, #black-section {
   min-height: 50vh;
-  padding-top: 20px;
-  color: #FFF;
+  padding-top: 150px;
+  color: white;
 }
-.green-section {
+#green-section {
   background-color: #027333;
 }
-.black-section {
+#black-section {
   background-color: black;
 }
 
-.verde-selection {
+#verde-selection {
   background-color: #0B2E17;
   color: #FFF;
   min-height: 50vh;
