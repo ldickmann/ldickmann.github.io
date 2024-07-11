@@ -1,20 +1,5 @@
-/* -- Cor de fundo page -- */
-body {
-  background-color: #ffffff;
-}
-/* -- Estilos da navbar -- */
-.navbar {
-  background-color: white !important; 
-  border-radius: 10px !important;
-}
-/* -- Ajusta o espaçamento superior da navbar -- */
-.fixed-top {
-  top: 20px !important;
-}
 /* -- Seções coloridas -- */
-#green-section, #black-section {
-  min-height: 50vh;
-  padding-top: 150px;
+#green-section, #black-section, #verde-section {
   color: white;
 }
 #green-section {
@@ -23,10 +8,8 @@ body {
 #black-section {
   background-color: black;
 }
-#verde-selection {
+#verde-section {
   background-color: #0B2E17;
-  color: #FFF;
-  min-height: 50vh;
 }
 /* -- Animação -- */
 h6::after {
@@ -43,20 +26,19 @@ h6::after {
     opacity: 0;
   }
 }
+/* -- Tamanho da logo -- */
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
 /* -- Estilo Rodapé -- */
 #footer {
   background-color: #027333;
   color: #ffffff;
   border-top: 1px solid #ffffff;
 }
-#footer .nav-link {
-  color: #000000;
-}
 /* -- Estilo dos links no rodapé -- */
-#footer a {
+#footer .a {
   text-decoration: none;
   color: white;
-}
-#footer a:hover {
-  color: #0d6efd;
 }
