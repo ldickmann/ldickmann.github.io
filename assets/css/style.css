@@ -5,26 +5,7 @@ body {
 /* -- Estilos da navbar -- */
 .navbar {
   background-color: white !important; 
-  width: 90%;
-  max-width: 1200px !important;
-  margin: 0 auto;
   border-radius: 10px !important;
-}
-/* -- responsividade navbar -- */
-@media (max-width: 768px) {
-  .navbar {
-    width: 100%;
-  }
-}
-@media (max-width: 576px) {
-  .navbar {
-    width: auto !important;
-  }
-}
-@media (max-width: 425px) {
-  .navbar {
-    width: auto !important;
-  }
 }
 /* -- Ajusta o espaçamento superior da navbar -- */
 .fixed-top {
@@ -42,7 +23,6 @@ body {
 #black-section {
   background-color: black;
 }
-
 #verde-selection {
   background-color: #0B2E17;
   color: #FFF;
