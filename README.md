@@ -1,5 +1,5 @@
-# Olá este é repositório para o meu portifólio
+# Olá!
 
-* **BEM VINDO!**
+**BEM VINDO!** Esse repositório é referente ao meu portfólio.
 
 ## Em desenvolvimento....
