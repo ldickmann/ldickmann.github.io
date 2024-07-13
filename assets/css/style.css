@@ -10,14 +10,3 @@ body {
     opacity: 0;
   }
 }
-/* -- Estilo Rodapé -- */
-#footer {
-  background-color: #027333;
-  color: #ffffff;
-  border-top: 1px solid #ffffff;
-}
-/* -- Estilo dos links no rodapé -- */
-#footer .a {
-  text-decoration: none;
-  color: white;
-}

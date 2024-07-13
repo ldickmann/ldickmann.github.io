@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>HOME</title>
+  <title>Portfólio | Lucas Dickmann</title>
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <main class="d-flex flex-nowrap">
-    <h1 class="visually-hidden">Sidebars examples</h1>
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width:250px;">
+  <header class="d-flex">
+    <h1 class="visually-hidden">Sidebar</h1>
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-black bg-gradient" style="width:250px;">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <img src="assets/images/logo-luks.png" alt="LogoLuks" width="32" height="32" class="rounded-circle me-3">
         <span class="fs-4">CodeWithLuks</span>
@@ -20,7 +20,7 @@
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link text-white bg-secondary" aria-current="page">
+          <a href="/" class="nav-link text-white bg-secondary" aria-current="page">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
             Home
           </a>
@@ -32,9 +32,9 @@
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link text-white">
+          <a href="/projetos.html" class="nav-link text-white">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-            Portfólio
+            Projetos
           </a>
         </li>
         <li>
@@ -46,6 +46,8 @@
       </ul>
       <hr>
     </div>
+  </header>
+  <main class="d-flex">
     <div class="d-flex flex-column p-4 text-white justify-content-center bg-black" style="background-image: url('assets/images/back-img.png');" id="conteudo">
       <div class="row flex-lg-row align-items-center justify-content-center">
         <div class="col-10 col-sm-8 col-lg-4 p-5">
@@ -68,7 +70,6 @@
       </div>
     </div>
   </main>
-  
   <footer></footer>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
