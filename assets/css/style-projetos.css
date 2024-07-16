@@ -1,0 +1,15 @@
+/* -- Style page Projetos -- */
+body {
+    min-height: 100vh;
+    display: flex;
+}
+main {
+    width: 100%;
+}
+#projetos {
+    background-color: #161225;
+    display: flex;
+}
+.img-fluid {
+    border-radius: 15%;
+  }
