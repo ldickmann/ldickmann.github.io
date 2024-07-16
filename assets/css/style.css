@@ -1,7 +1,16 @@
 /* -- Style page Home -- */
 body {
-  min-height: 100vh;
   display: flex;
+  min-height: 100vh;
+}
+main {
+  display: flex;
+}
+header {
+  display: flex;
+}
+#footer {
+  padding-top: 27%;
 }
 @keyframes piscar {
   0%, 100% {
