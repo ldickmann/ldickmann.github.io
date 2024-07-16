@@ -6,9 +6,6 @@ body {
 header {
     display: flex;
 }
-footer {
-    display: flex;
-}
 #projetos {
     background-color: #161225;
 }
