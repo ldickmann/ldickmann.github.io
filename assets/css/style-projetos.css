@@ -4,12 +4,15 @@ body {
     display: flex;
 }
 main {
+    display: flex;
     width: 100%;
 }
 #projetos {
     background-color: #161225;
-    display: flex;
 }
 .img-fluid {
     border-radius: 15%;
-  }
+}
+footer {
+    height: auto;
+}
