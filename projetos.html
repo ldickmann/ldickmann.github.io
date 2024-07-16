@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="assets/css/style-projetos.css">
 </head>
 <body>
-  <header class="d-flex">
-    <div class="d-flex flex-column flex-shrink-0 bg-black bg-gradient" style="width: 4.5rem;">
+  <header>
+    <div class="d-flex flex-column bg-black bg-gradient" style="width: 4.5rem;">
       <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
         <img src="assets/images/logo-luks.png" class="img-fluid" alt="Bootstrap Themes" width="500" height="500" loading="lazy">
         <span class="visually-hidden">Icon-only</span>
@@ -43,36 +43,40 @@
       </ul>
     </div>
   </header>
-  <div class="container-fluid" id="projetos">
-    <main>
-      <div class="row flex-lg-row align-items-center justify-content-center">
-        <div class="col-10 col-sm-8 col-lg-4 p-5">
-          <!-- CONTEÚDO PRINCIPAL DA PAGE. EM DESENVOLVIMENTO.... -->
+  <div class="container-fluid overflow-hidden text-center" id="projetos">
+    <div class="row">
+      <main class="flex-shrink-0">
+        <div class="container">
+          <h1 class="mt-5 text-white">Projetos / Em Desenvolvimento...</h1>
+          <p class="lead text-white">Projetos web, desenvolvidos em Python com o Django framework<code class="small">........</code> on the <code class="small">.....</code>.</p>
+          <p>Acesse o repositório <a href="#">Rosa Trip Locadora</a></p>
         </div>
-      </div>  
-    </main>
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <span class="text-muted text-center"><strong class="text-white">© 2024 Lucas E. Dickmann</strong></span>
-      </div>
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3">
-          <a  class="icon-link" href="https://linkedin.com/in/lucas-dickmann/">
-            <i class="bi bi-linkedin" style="font-size: 24px; color: white;"></i>
-          </a>
-        </li>
-        <li class="ms-3">
-          <a  class="icon-link link-dark" href="https://instagram.com/luksdickmann/">
-            <i class="bi bi-instagram" style="font-size: 24px; color: white;"></i>
-          </a>
-        </li>
-        <li class="ms-3">
-          <a  class="icon-link link-dark" href="https://github.com/ldickmann">
-            <i class="bi bi-github" style="font-size: 24px; color: white;"></i>
-          </a>
-        </li>
-      </ul>
-    </footer>
+      </main>
+    </div>
+    <div class="row-sm">
+      <footer class="footer mt-auto py-3 border-top">
+        <div class="container">
+          <span class="text-muted text-center"><strong class="text-white">© 2024 Lucas E. Dickmann</strong></span>
+        </div>
+        <ul class="nav col-md-4 list-unstyled d-flex">
+          <li class="ms-3">
+            <a  class="icon-link" href="https://linkedin.com/in/lucas-dickmann/">
+              <i class="bi bi-linkedin" style="font-size: 24px; color: white;"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a  class="icon-link link-dark" href="https://instagram.com/luksdickmann/">
+              <i class="bi bi-instagram" style="font-size: 24px; color: white;"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a  class="icon-link link-dark" href="https://github.com/ldickmann">
+              <i class="bi bi-github" style="font-size: 24px; color: white;"></i>
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </div>
   </div>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>

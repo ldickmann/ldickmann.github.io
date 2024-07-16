@@ -1,18 +1,17 @@
 /* -- Style page Projetos -- */
 body {
+    display: flex;
     min-height: 100vh;
+}
+header {
     display: flex;
 }
-main {
+footer {
     display: flex;
-    width: 100%;
 }
 #projetos {
     background-color: #161225;
 }
 .img-fluid {
     border-radius: 15%;
-}
-footer {
-    height: auto;
 }
