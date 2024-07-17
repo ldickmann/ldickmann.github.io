@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfólio | Lucas Dickmann</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/fonts/bootstrap-icons.woff">
+    <link rel="stylesheet" href="assets/css/fonts/bootstrap-icons.woff2">
+    <link rel="stylesheet" href="assets/css/style-contato.css">
+</head>
+</html>
+<body>
+    <header>
+        <div class="d-flex flex-column flex-shrink-0 bg-black bg-gradient" style="width: 4.5rem;">
+          <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+            <img src="assets/images/logo-luks.png" class="img-fluid" alt="Bootstrap Themes" width="500" height="500" loading="lazy">
+            <span class="visually-hidden">Icon-only</span>
+          </a>
+          <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li class="nav-item">
+              <a href="/" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
+                <i class="bi bi-house" style="font-size: 24px;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/sobre.html" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Sobre">
+                <i class="bi bi-person-vcard text-white" style="font-size: 24px;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/projetos.html" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Projetos">
+                <i class="bi bi-file-earmark-code text-white" style="font-size: 24px;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/contato.html" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Contato">
+                <i class="bi bi-chat-left-dots text-white" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </header>
+    <div class="container-fluid" id="contato">
+        <main class="flex-shrink-0 justify-content-lg-center py-3">
+            <div class="container mb-3">
+                <section class="text-light bg-gradient bg-black border py-3 py-md-5">
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl">
+                                <h2 class="mb-3 display-5 text-center">Formulário para contato</h2>
+                                <p class="text-secondary mb-4 text-center">Se você está planejando um novo projeto ou precisa de suporte web em um já em andamento, entre em contato comigo agora mesmo!</p>
+                                <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row justify-content-lg-center">
+                            <div class="col-12 col-lg-9">
+                                <div class="border rounded shadow-sm overflow-hidden">
+                                    <form action="#!">
+                                        <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
+                                            <div class="col-12">
+                                                <label for="fullname" class="form-label">Nome <span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text">
+                                                        <i class="bi bi-person" style="font-size: 25px;"></i>
+                                                    </span>
+                                                <input type="text" class="form-control" id="fullname" name="fullname" value="" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text">
+                                                        <i class="bi bi-envelope" style="font-size: 25px;"></i>
+                                                    </span>
+                                                    <input type="email" class="form-control" id="email" name="email" value="" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="message" class="form-label">Mensagem <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="d-grid py-5">
+                                                    <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <footer class="d-flex flex-wrap justify-content-center mb-3 border-top">
+                <div class="col-md-4 d-flex align-items-center justify-content-center">
+                  <span class="text-muted text-center"><strong class="text-white">© 2024 Lucas E. Dickmann</strong></span>
+                </div>
+                <ul class="nav col-md-4 list-unstyled d-flex justify-content-center">
+                  <li class="ms-3">
+                    <a  class="icon-link" href="https://linkedin.com/in/lucas-dickmann/">
+                      <i class="bi bi-linkedin" style="font-size: 24px; color: white;"></i>
+                    </a>
+                  </li>
+                  <li class="ms-3">
+                    <a  class="icon-link link-dark" href="https://instagram.com/luksdickmann/">
+                      <i class="bi bi-instagram" style="font-size: 24px; color: white;"></i>
+                    </a>
+                  </li>
+                  <li class="ms-3">
+                    <a  class="icon-link link-dark" href="https://github.com/ldickmann">
+                      <i class="bi bi-github" style="font-size: 24px; color: white;"></i>
+                    </a>
+                  </li>
+                </ul>
+            </footer>
+        </main>
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

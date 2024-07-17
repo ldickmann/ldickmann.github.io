@@ -1,0 +1,21 @@
+/* -- Style page Projetos -- */
+body {
+    display: flex;
+}
+header {
+    display: flex;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+footer {
+    margin-top: auto !important;
+}
+.img-fluid {
+    border-radius: 15%;
+}
+#contato {
+    background-color: #161225;
+}
