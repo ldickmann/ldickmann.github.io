@@ -65,8 +65,7 @@ section {
   font-size: 1.2vw;
   font-weight: 300;
   color: white;
-  margin: 0;
-  margin-bottom: -3vw;
+  margin: 0 0 -3vw;
   letter-spacing: 0.2vw;
 }
 
@@ -77,7 +76,7 @@ section {
 }
 
 #about {
-  background-color: #21d22dc5;
+  background-color: rgba(14, 66, 18, 0.77);
   height: 100vh;
 }
 
