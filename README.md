@@ -23,7 +23,7 @@
 ## Dependências
 
 * **Front-end:**
-    * Bootstrap 5.3
+    * tsParticles - TypeScript Particles
 
 ---
 
