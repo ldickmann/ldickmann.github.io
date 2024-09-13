@@ -27,6 +27,10 @@
 
 ---
 
+### Integração das SECTIONS Soft Skills e Projetos - 13/09/2024
+* **Integração e atualização feita para o Programa Oracle ONE - Módulo: Challenge Portfólio**
+
+---
 ## Contato
 
 * **E-mail:** ldickmann12@gmail.com
