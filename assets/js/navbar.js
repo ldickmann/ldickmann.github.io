@@ -29,7 +29,7 @@ function changeFeatures(x) {
         document.getElementById("navbar").innerHTML = "<div onclick='openSidebar()' id='hamburger-icon'><div class=\"hg\"></div><div class=\"hg\"></div><div class=\"hg\"></div></div>"
     }
     else {
-        document.getElementById("navbar").innerHTML = "<ul><li><a href=\"#home\">Home</a></li><li><a href=\"#about\">Sobre</a></li><li><a href=\"#skills\">Hard Skills</a></li><li><a href=\"#contact\">Contato</a></li></ul>";
+        document.getElementById("navbar").innerHTML = "<ul><li><a href=\"#home\">Home</a></li><li><a href=\"#about\">Sobre</a></li><li><a href=\"#hard-skills\">Hard Skills</a></li><li><a href=\"#soft-skills\">Soft Skills</a></li><li><a href=\"#projects\">Projetos</a></li><li><a href=\"#contact\">Contato</a></li></ul>";
     }
 }
 

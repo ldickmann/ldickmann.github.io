@@ -65,7 +65,7 @@ section {
   font-size: 1.2vw;
   font-weight: 300;
   color: white;
-  margin: 0 0 -3vw;
+  margin: 0 0 1vw;
   letter-spacing: 0.2vw;
 }
 
@@ -98,8 +98,7 @@ section {
   color: #0b0c10;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 6vw;
-  margin: 0;
-  margin-left: 4vw;
+  margin: 0 0 0 4vw;
   cursor: default;
 }
 
@@ -141,6 +140,8 @@ section {
   font-size: 0.8vw;
 }
 
+/* footer de Contato */
+
 #contact-bg {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -150,13 +151,13 @@ section {
 #contact {
   display: flex;
   justify-content: center;
-  background-image: repeating-linear-gradient(-45deg, rgba(255,255,255, 0.25), rgba(255,255,255, 0.25) 1px, transparent 1px, transparent 6px);
+  background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) 1px, transparent 1px, transparent 6px);
   background-size: 8px 8px;
-  height: 100vh;
+  height: 70vh;
 }
 
 #contact-overlay {
-  background-color: white;
+  background-color: #ffffff;
   height: 100%;
   width: 50%;
   display: flex;
@@ -165,12 +166,11 @@ section {
 }
 
 #contact-overlay h1 {
-  margin: 0;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 7vw;
-  margin-left: 8vw;
-  margin-top: -3vw;
+  margin: -3vw 0 0 8vw;
   cursor: default;
+  color: black;
 }
 
 #contact-overlay p {
@@ -184,7 +184,7 @@ section {
 #social-media-group-contact {
   display: flex;
   flex-direction: column;
-  margin-left: 8vw;
+  margin-left: 9vw;
   margin-top: 1.5vw;
 }
 
@@ -193,14 +193,17 @@ section {
   font-size: 1.5vw !important;
   width: 80%;
   margin-bottom: 1vw;
+  border-radius: 0.5vh;
 }
 
-#skills {
+/* Seção de Hard Skills */
+
+#hard-skills {
   background: linear-gradient(110deg, #000000 60%, #4f00b7 60%);
   height: 100vh;
 }
 
-#skills-content {
+#hard-skills-content {
   width: 80%;
   border-left: 0.15vw solid #fdffff;
   display: flex;
@@ -208,20 +211,19 @@ section {
   justify-content: center;
 }
 
-#skills-content h1 {
+#hard-skills-content h1 {
   font-family: 'Barlow Condensed', sans-serif;
   color: #ffffff;
   font-size: 6vw;
-  margin: 0;
-  margin-left: 4vw;
+  margin: 0 0 0 4vw;
   cursor: default;
 }
 
-.skill {
+.hard-skill {
   position: relative;
 }
 
-.skillbox {
+.hard-skillbox {
   border-radius: 2vw;
   width: 90%;
   border: 0.15vw solid #ffffff;
@@ -229,7 +231,7 @@ section {
   margin-top: 3.2vw;
 }
 
-.skillbar {
+.hard-skillbar {
   padding-top: 0.5vw;
   border-radius: 2vw 0 0 2vw;
   padding-bottom: 0.5vw;
@@ -242,7 +244,7 @@ section {
   font-size: 0.8vw;
 }
 
-.skill img {
+.hard-skill img {
   width: 3vw;
   position: absolute;
   left: 4vw;
@@ -258,66 +260,94 @@ section {
   color: white;
 }
 
-#projects {
-  background-image: repeating-linear-gradient(-45deg, #3aafa9, rgba(255,255,255, 0.25) 1px, transparent 1px, transparent 6px);
-  background-size: 8px 8px;
+/* Seção Soft-Skills */
+
+.frame-soft-skills {
+  background: linear-gradient(90deg, #ffffff 50%, #ffffff 50%);
+  height: 70vh;
+  width: 60%;
+  margin: 0 5vw 1vw 15vw;
+  border-radius: 1vw;
+}
+
+#soft-skills {
+  background: linear-gradient(#DC2743 60%, #4f00b7 60%);
+  height: 100vh;
+}
+
+#soft-skills-content {
+  width: 80%;
+  border-left: 0.20vw solid #000000;
+  display: flex;
   flex-direction: column;
-  background-color: white;
+  justify-content: center;
+}
+
+#soft-skills-content h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #ffffff;
+  font-size: 6vw;
+  margin-top: 0.1rem;
+  margin-left: 4vw;
+  cursor: default;
+}
+
+.soft-skill {
+  position: relative;
+}
+
+.soft-skillbox {
+  border-radius: 2vw;
+  width: 80%;
+  border: 0.15vw solid #000000;
+  margin-top: 3vw;
+}
+
+.soft-skillbar {
+  padding-top: 0.5vw;
+  border-radius: 2vw 0 0 2vw;
+  padding-bottom: 0.5vw;
+  background-color: #185e00;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: black;
+  font-weight: 700;
+  text-align: right;
+  padding-right: 1vw;
+  font-size: 0.8vw;
+}
+
+.soft-skill img {
+  width: 3vw;
+  position: absolute;
+  left: 4vw;
+  top: 2.5vw;
+}
+
+.title-soft {
+  position: absolute;
+  top: 2vw;
+  left: 9vw;
+  font-family: 'JejuGothic-Regular', sans-serif;
+  color: #000000;
+  width: 60%;
+  font-size: 1.5vw;
+}
+
+/* Seção de Projetos */
+
+#projects {
+  background-color: #33963d;
+  padding: 100px 0 280px 0;
 }
 
 #projects h1 {
   font-family: 'Barlow Condensed', sans-serif;
-  margin: 0;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
-  font-size: 6vw;
+  color: #ffffff;
+  font-size: 5vw;
+  margin-left: 16vh;
 }
 
-.projects-page {
-  margin-bottom: 5vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.projects-page img {
-  width: 45vw;
-  margin-left: 5vw;
-  border-radius: 1vw;
-}
-
-.projects-page .description {
-  height: 24vw;
-  margin-left: 3vw;
-}
-
-.projects-page .description h1 {
-  color: black;
-  width: 80%;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 4vw !important;
-  cursor: default;
-  margin: 0 !important;
-  transition: color 0.3s;
-}
-
-.projects-page .description p {
-  color: black;
-  width: 80%;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 1vw;
-  margin-bottom: 3vw;
-}
-
-.projects-page .description a {
-  color: black;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 1vw;
-  font-weight: 700;
-  border: 0.15vw solid black;
-  margin-top: -0.5vw;
-  padding: 1vw;
-}
+/* Navbar */
 
 nav {
   position: fixed;
