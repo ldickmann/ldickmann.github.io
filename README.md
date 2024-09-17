@@ -34,7 +34,8 @@
 ## Contato
 
 * **E-mail:** ldickmann12@gmail.com
-* **LinkedIn:** https://www.linkedin.com/in/lucas-dickmann
+
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/lucas-dickmann) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://instagram.com/luksdickmann)
 
 ---
 
