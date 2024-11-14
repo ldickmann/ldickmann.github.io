@@ -9,7 +9,9 @@
 
 * **Front-end:**
     * HTML, CSS, JavaScript: Crio interfaces de usuário responsivas e interativas.
-    * Bootstrap 5.3: Utilizo para agilizar o desenvolvimento e garantir um design consistente e com responsividade.
+    * Vue.js:
+    * Bootstrap: Utilizo para agilizar o desenvolvimento e garantir um design consistente e com responsividade.
+    * Quasar: 
 * **Back-end:**
     * Python: Desenvolvo a lógica de negócios e acesso a bancos de dados.
     * Django, Django REST Framework: Construo APIs robustas e escaláveis.
