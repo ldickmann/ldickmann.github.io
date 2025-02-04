@@ -1,46 +1,52 @@
-<div align="center">
-  <h1 style="font-size: 3em;">Portfólio de Lucas E. Dickmann</h1>
-  <h2 style="font-size: 1.5em;">👋 Olá! Sou um apaixonado por desenvolvimento web, com foco em criar experiências digitais incríveis e funcionais.</h2>
+# 🚀 Portfolio - Dev Luks
+
+Bem-vindo ao repositório do meu novo portfólio! 🎨💻
+
+## 🛠️ Tecnologias Utilizadas
+
+- React + Vite ⚛️🚀
+- JavaScript (ES6+)
+- HTML5 & CSS3
+- React Icons 🖼️
+- React Router DOM
+- Styled Components
+- React Icons
+
+## ✨ Principais Características
+
+- Página inicial interativa com [`ParticlesComponent`](src/components/Particles/particlesComponent.jsx)
+- Design responsivo para desktop e mobile
+- Showcase de projetos com links para demos e GitHub
+- Animações e transições modernas
+- Tema escuro com acentos neon
+
+## 📦 Dependências
+
+Este projeto utiliza várias dependências de terceiros para melhorar a funcionalidade e a aparência do portfólio:
+
+- **[@tsparticles/react](https://github.com/tsparticles/tsparticles)**: Utilizado para criar animações de partículas impressionantes na página inicial. Esta biblioteca é altamente configurável e fácil de usar com React.
+- **[@tsparticles/slim](https://github.com/tsparticles/tsparticles)**: Versão otimizada do tsparticles para melhor desempenho.
+- **[styled-components](https://styled-components.com)**: Estilização CSS-in-JS
+- **[react-router-dom](https://reactrouter.com)**: Roteamento e navegação
+- **[react-slick](https://react-slick.neostack.com)**: Componente de carrossel para views mobile
+
+## 🎯 Objetivo do Projeto
+
+- Este portfólio tem como objetivo apresentar minhas habilidades, projetos e experiências de maneira dinâmica e profissional.
+
+## 📢 Contato
+
+📧 ldickmann12@gmail.com
+
+<div align="left">
+  <a href="https://www.linkedin.com/in/lucas-dickmann" target="_blank">
+    <img src="https://skillicons.dev/icons?i=linkedin" height="40" />
+  </a>
+  <a href="https://www.instagram.com/luksdickmann" target="_blank">
+    <img src="https://skillicons.dev/icons?i=instagram" height="40" />
+  </a>
 </div>
 
 ---
 
-## Habilidades
-
-* **Front-end:**
-    * HTML, CSS, JavaScript: Crio interfaces de usuário responsivas e interativas.
-    * Vue.js:
-    * Bootstrap: Utilizo para agilizar o desenvolvimento e garantir um design consistente e com responsividade.
-    * Quasar: 
-* **Back-end:**
-    * Python: Desenvolvo a lógica de negócios e acesso a bancos de dados.
-    * Django, Django REST Framework: Construo APIs robustas e escaláveis.
-* **Ferramentas:**
-    * Git, GitHub: Gerencio o versionamento de código e colaboro em projetos.
-    * PyCharm, VS Code: Ambientes de desenvolvimento que utilizo para programar.
-    * npm: Gerenciador de pacotes para instalar e gerenciar dependências do projeto.
-
----
-
-## Dependências
-
-* **Front-end:**
-    * tsParticles - TypeScript Particles
-
----
-
-### Integração das SECTIONS Soft Skills e Projetos - 13/09/2024
-* **Integração e atualização feita para o Programa Oracle ONE - Módulo: Challenge Portfólio**
-
----
-## Contato
-
-* **E-mail:** ldickmann12@gmail.com
-
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/lucas-dickmann) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://instagram.com/luksdickmann)
-
----
-
-## 🌱 Portfólio em Desenvolvimento 🌱
-
-Estou constantemente aprendendo e aprimorando minhas habilidades. Fique à vontade para entrar em contato comigo para discutir oportunidades de colaboração ou projetos futuros!
+> 🔥 Este repositório será atualizado constantemente. Fique de olho nas novidades!

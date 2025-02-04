@@ -1,0 +1,19 @@
+:root {
+  --font-banner: "Press Start 2P", serif;
+
+  --color-green: #00f441;
+  --color-green-dark: #223f23;
+  --color-green-active: #69bf8e;
+  --color-white: #ffffff;
+  --color-white-medium: #d9d9d9;
+  --color-black: #000000;
+  --color-black-light: #222222;
+  --color-black-medium: #0d0d0d;
+  --color-grey: #211818;
+  --color-beige: #a68f7b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
