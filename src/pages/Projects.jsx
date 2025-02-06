@@ -47,21 +47,21 @@ const Projects = () => {
     {
       src: "./images/djangoSGE.png",
       alt: "Django SGE | Full Stack App - Django, Django REST & Bootstrap",
-      title: "Django SGE - Sistema de Gerenciamento de Estoque",
+      title: "Django SGE | Sistema de Gerenciamento de Estoque",
       githubLink: "https://github.com/ldickmann/djangoSGE",
-    },
-    {
-      src: "./images/alura-flix-app.png",
-      alt: "AluraFlix | Front-end App - React",
-      title: "Aplicação AluraFlix | Front-end App - React",
-      githubLink: "https://github.com/ldickmann/AluraFlix-ONE",
-      deployLink: "https://alura-flix-one-blond.vercel.app/",
     },
     {
       src: "./images/luk-flix-app.png",
       alt: "LukFlix App",
       title: "Projeto LukFlix | Front-end App - Django",
       githubLink: "https://github.com/ldickmann/LukFlix-App",
+    },
+    {
+      src: "./images/login-page.png",
+      alt: "Forms Login",
+      title: "Forms Login | React",
+      githubLink: "https://github.com/ldickmann/login-page",
+      deployLink: "https://login-page-luks-dev.vercel.app/",
     },
     {
       src: "./images/meteora-app.png",
@@ -102,10 +102,17 @@ const Projects = () => {
     {
       src: "./images/pong.png",
       alt: "Pong Game",
-      title: "Projeto Pong Game - Javascript",
+      title: "Projeto Pong Game | Javascript",
       githubLink:
         "https://github.com/ldickmann/FrontEndG7-ONE/tree/main/ChatGPTeJS",
       deployLink: "https://ldickmann.github.io/FrontEndG7-ONE/ChatGPTeJS/",
+    },
+    {
+      src: "./images/alura-flix-app.png",
+      alt: "AluraFlix | Front-end App - React",
+      title: "Aplicação AluraFlix | Front-end App - React",
+      githubLink: "https://github.com/ldickmann/AluraFlix-ONE",
+      deployLink: "https://alura-flix-one-blond.vercel.app/",
     },
   ];
 
