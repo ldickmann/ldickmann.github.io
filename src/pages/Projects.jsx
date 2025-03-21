@@ -39,16 +39,14 @@ const Projects = () => {
 
   const cards = [
     {
-      src: "./images/smash-burger/smash-burger.png",
+      src: "./images/smash-burger/home-smash-burger.png",
       alt: "Smash Burgers | Front End App - Vue.js",
       title: "Smash Burgers | Front-end App - Vue.js",
-      width: "560px",
-      height: "280px",
+      width: "320px",
       gallery: [
-        "./images/smash-burger/smash-burger.png",
         "./images/smash-burger/home-smash-burger.png",
-        "./images/smash-burger/cardapio-smash-burger.png",
-        "./images/smash-burger/modal-add-smash-burger.png",
+        "./images/smash-burger/carrinho-smash-burger.jpg",
+        "./images/smash-burger/menu-smash-burger.jpg",
       ],
       description:
         "Um aplicativo web em Vue.js para delivery de hambúrgueres artesanais, permitindo aos clientes navegar pelo cardápio, fazer pedidos e realizar pagamentos online.",
