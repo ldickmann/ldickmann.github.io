@@ -4,11 +4,15 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import NavLinks from "../NavLinks";
 
+const HeaderNavbar = styled.header`
+  background-color: var(--color-black);
+`;
+
 const Navigation = styled.nav`
+  margin: 0 auto;
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--color-black);
   width: 100%;
   box-sizing: border-box;
 `;
@@ -47,11 +51,14 @@ const Navbar = ({ toggleSidebar }) => {
   }, []);
 
   return (
-    <header>
+    <HeaderNavbar>
       <Navigation>
         {isMobile && (
           <ToggleIcon onClick={toggleSidebar}>
-            <FaBars size={40} color="white" />
+            <FaBars
+              size={40}
+              color="white"
+            />
           </ToggleIcon>
         )}
         {!isMobile && (
@@ -65,7 +72,7 @@ const Navbar = ({ toggleSidebar }) => {
           </NavList>
         )}
       </Navigation>
-    </header>
+    </HeaderNavbar>
   );
 };
 

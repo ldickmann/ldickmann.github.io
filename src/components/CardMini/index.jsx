@@ -1,92 +1,166 @@
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useState, memo } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import ImageComponent from "../ImageComponent";
+import ModalCard from "../ModalCard";
 
 const CardSection = styled.section`
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
-
-  @media (max-width: 550px) {
-    flex-direction: column;
-    align-items: center;
-  }
+  gap: 1rem;
+  padding: 2rem;
 `;
 
 const CardContainer = styled.div`
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  border: 1px solid #000;
-  border-radius: 8px;
-  margin: 2rem 2rem;
-  background-color: var(--color-grey);
+  backdrop-filter: blur(10px);
   color: var(--color-green);
-  padding: 0rem 0rem 2rem 0rem;
-  box-shadow: rgba(34, 63, 35, 1) 0px 4px 10px 0px,
-    rgba(34, 63, 35, 1) 0px 4px 15px 0px;
-  overflow: hidden;
-  max-width: 450px;
-`;
-
-const CardTitle = styled.h3`
-  font-size: 1.3rem;
-  padding-inline: 1rem;
-`;
-
-const IconContainer = styled.div`
-  display: flex;
-  gap: 3rem;
-`;
-
-const IconLink = styled.a`
-  color: white;
-  transition: color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: ${({ width }) => width || "450px"};
+  max-height: ${({ height }) => height || "300px"};
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 
   &:hover {
-    color: var(--color-green-dark);
-    transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgba(0, 95, 0, 0.5);
+  }
+
+  &:hover .overlay {
+    opacity: 1;
   }
 `;
 
-const ProjectCard = ({ src, alt, title, githubLink, deployLink }) => (
-  <CardContainer>
-    <ImageComponent src={src} alt={alt} width="100%" />
-    <CardTitle>{title}</CardTitle>
-    <IconContainer>
-      <IconLink href={githubLink} target="_blank" rel="noopener noreferrer">
-        <FaGithub size={28} />
-      </IconLink>
-      {deployLink && (
-        <IconLink href={deployLink} target="_blank" rel="noopener noreferrer">
-          <FaExternalLinkAlt size={28} />
-        </IconLink>
-      )}
-    </IconContainer>
-  </CardContainer>
+const Overlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+`;
+
+const CardTitle = styled.h3`
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #fff;
+  border-radius: 4px;
+`;
+
+const ProjectCard = memo(
+  ({
+    src,
+    alt,
+    title,
+    width,
+    height,
+    description,
+    gallery,
+    repoUrl,
+    deployUrl,
+    onSelect,
+  }) => {
+    const handleClick = () => {
+      // Envia os dados necessários para o ModalCard
+      onSelect({
+        src,
+        alt,
+        title,
+        width,
+        height,
+        description,
+        gallery,
+        repoUrl,
+        deployUrl,
+      });
+    };
+
+    return (
+      <CardContainer
+        width={width}
+        height={height}
+        onClick={handleClick}>
+        <ImageComponent
+          src={src}
+          alt={alt}
+          width="100%"
+          height="100%"
+        />
+        <Overlay className="overlay">
+          <CardTitle>{title}</CardTitle>
+        </Overlay>
+      </CardContainer>
+    );
+  }
 );
 
-const CardMini = ({ cards }) => {
-  return (
-    <CardSection>
-      {cards.map((card, index) => (
-        <ProjectCard key={index} {...card} />
-      ))}
-    </CardSection>
-  );
-};
+ProjectCard.displayName = "ProjectCard";
 
 ProjectCard.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  githubLink: PropTypes.string.isRequired,
-  deployLink: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  description: PropTypes.string,
+  gallery: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
+  repoUrl: PropTypes.string,
+  deployUrl: PropTypes.string,
+  onSelect: PropTypes.func.isRequired,
+};
+
+const CardMini = ({ cards }) => {
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  const handleCloseModal = () => setSelectedCard(null);
+
+  return (
+    <>
+      <CardSection>
+        {cards.map((card, index) => (
+          <ProjectCard
+            key={index}
+            {...card}
+            onSelect={setSelectedCard}
+          />
+        ))}
+      </CardSection>
+      {selectedCard && (
+        <ModalCard
+          card={selectedCard}
+          onClose={handleCloseModal}
+        />
+      )}
+    </>
+  );
 };
 
 CardMini.propTypes = {
-  cards: PropTypes.arrayOf(PropTypes.shape(ProjectCard.propTypes)).isRequired,
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      width: PropTypes.string,
+      height: PropTypes.string,
+      description: PropTypes.string,
+      gallery: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+      ]),
+      repoUrl: PropTypes.string,
+      deployUrl: PropTypes.string,
+    })
+  ).isRequired,
 };
 
-export default CardMini;
+export default memo(CardMini);
