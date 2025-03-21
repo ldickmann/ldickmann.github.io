@@ -10,6 +10,7 @@ import {
   FaExternalLinkAlt,
 } from "react-icons/fa";
 
+// Tratar responsividade
 const OverlayBackground = styled.div`
   position: fixed;
   top: 0;
@@ -124,6 +125,7 @@ const ModalCard = ({ card, onClose }) => {
               src={images[currentIndex]}
               alt={card.alt}
               width="100%"
+              height="550px"
             />
           </ImageWrapper>
           <NavigationButton onClick={handleNext}>

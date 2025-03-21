@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import ImageComponent from "../ImageComponent";
 import ModalCard from "../ModalCard";
 
+// Tratar responsividade
 const CardSection = styled.section`
   display: flex;
   flex-wrap: wrap;
