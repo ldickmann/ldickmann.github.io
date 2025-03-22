@@ -40,14 +40,10 @@ const Projects = () => {
   const cards = [
     {
       src: "./images/smash-burger/home-smash-burger.png",
-      alt: "Smash Burgers | Front End App - Vue.js",
-      title: "Smash Burgers | Front-end App - Vue.js",
+      alt: "Smash Burger | Front End App - Vue.js",
+      title: "Smash Burger - Vue.js",
       width: "320px",
-      gallery: [
-        "./images/smash-burger/home-smash-burger.png",
-        "./images/smash-burger/carrinho-smash-burger.jpg",
-        "./images/smash-burger/menu-smash-burger.jpg",
-      ],
+      height: "300px",
       description:
         "Um aplicativo web em Vue.js para delivery de hambúrgueres artesanais, permitindo aos clientes navegar pelo cardápio, fazer pedidos e realizar pagamentos online.",
       repoUrl: "https://github.com/ldickmann/smash-burguer",
@@ -55,8 +51,9 @@ const Projects = () => {
     {
       src: "./images/login-page.png",
       alt: "Forms Login",
-      title: "Forms Login | React",
-      width: "500px",
+      title: "Forms Login - React",
+      width: "320px",
+      height: "300px",
       description: "Aplicação de formulário de login em React.",
       repoUrl: "https://github.com/ldickmann/login-page",
       deployUrl: "https://login-page-luks-dev.vercel.app/",
@@ -64,8 +61,9 @@ const Projects = () => {
     {
       src: "./images/djangoSGE.png",
       alt: "Django SGE | Full Stack App - Django, Django REST & Bootstrap",
-      title: "Django SGE | Sistema de Gerenciamento de Estoque",
-      width: "500px",
+      title: "Django SGE - Django",
+      width: "320px",
+      height: "300px",
       description:
         "Um sistema completo para controle de estoque, gestão de produtos e movimentações, desenvolvido com Django, Django REST Framework e Bootstrap.",
       repoUrl: "https://github.com/ldickmann/djangoSGE",
@@ -73,9 +71,9 @@ const Projects = () => {
     {
       src: "./images/pong.png",
       alt: "Pong Game",
-      title: "Projeto Pong Game | Javascript",
-      width: "450px",
-      height: "240px",
+      title: "Pong Game - Javascript",
+      width: "320px",
+      height: "300px",
       description:
         "Jogo Pong desenvolvido com HTML, CSS e JavaScript, com suporte a multiplayer local.",
       repoUrl:
@@ -85,9 +83,9 @@ const Projects = () => {
     {
       src: "./images/ola-mundo.png",
       alt: "Ola mundo - React App",
-      title: "Aplicação Olá Mundo | Front-end App - React",
-      width: "380px",
-      height: "250px",
+      title: "Olá Mundo - React",
+      width: "320px",
+      height: "300px",
       description:
         "Aplicação React - Projeto de Blog desenvolvido ao decorrer do Bootcamp Oracle ONE.",
       repoUrl: "https://github.com/ldickmann/ReactG7-ONE/tree/main/ola-mundo",
@@ -96,9 +94,9 @@ const Projects = () => {
     {
       src: "./images/meteora-app.png",
       alt: "Meteora App | Front End App",
-      title: "Aplicação Meteora | Front-end App - React",
+      title: "Meteora - React",
       width: "320px",
-      height: "200px",
+      height: "300px",
       description:
         "Aplicação React - Projeto de e-commerce desenvolvido ao decorrer do Bootcamp Oracle ONE.",
       repoUrl:
@@ -108,9 +106,9 @@ const Projects = () => {
     {
       src: "./images/alura-flix-app.png",
       alt: "AluraFlix | Front-end App - React",
-      title: "Aplicação AluraFlix | Front-end App - React",
+      title: "AluraFlix - React",
       width: "320px",
-      height: "260px",
+      height: "300px",
       description:
         "Aplicação React - Projeto de streaming de vídeos desenvolvido ao decorrer do Bootcamp Oracle ONE.",
       repoUrl: "https://github.com/ldickmann/AluraFlix-ONE",
@@ -119,9 +117,9 @@ const Projects = () => {
     {
       src: "./images/space-app.png",
       alt: "Space APP",
-      title: "Projeto Space | Front-end App - React",
-      width: "380px",
-      height: "200px",
+      title: "Space App - React",
+      width: "320px",
+      height: "300px",
       description:
         "Aplicação React - Projeto de blog de notícias espaciais desenvolvido ao decorrer do Bootcamp Oracle ONE.",
       repoUrl: "https://github.com/ldickmann/ReactG7-ONE/tree/main/space-app",
@@ -130,16 +128,19 @@ const Projects = () => {
     {
       src: "./images/luk-flix-app.png",
       alt: "LukFlix App",
-      title: "Projeto LukFlix | Front-end App - Django",
-      width: "350px",
-      height: "200px",
+      title: "LukFlix | Django",
+      width: "320px",
+      height: "300px",
+      description:
+        "Aplicação web em Django para streaming de vídeos, com autenticação de usuários e integração com a API FlixAPI.",
+      repoUrl: "https://github.com/ldickmann/LukFlix-App",
     },
     {
       src: "./images/flix-API.png",
       alt: "Flix API",
-      title: "FlixAPI | Back-end API - Django REST Framework",
-      width: "280px",
-      height: "240px",
+      title: "FlixAPI - Django REST",
+      width: "320px",
+      height: "300px",
       description:
         "API RESTful desenvolvida com Django REST Framework para fornecer dados para o projeto LukFlix.",
       repoUrl: "https://github.com/ldickmann/FlixApi",
@@ -147,9 +148,9 @@ const Projects = () => {
     {
       src: "./images/django-cars-app.png",
       alt: "Django Cars App",
-      title: "Aplicação Front-end Django Cars | Django e Python",
-      width: "280px",
-      height: "260px",
+      title: "Django Cars | Django",
+      width: "320px",
+      height: "300px",
       description:
         "Aplicação web em Django para cadastro e listagem de veículos.",
       repoUrl: "https://github.com/ldickmann/djangoCars",

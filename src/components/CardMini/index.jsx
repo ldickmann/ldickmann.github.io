@@ -1,107 +1,186 @@
-import { useState, memo } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import ImageComponent from "../ImageComponent";
-import ModalCard from "../ModalCard";
 
-// Tratar responsividade
 const CardSection = styled.section`
+  max-width: 1300px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   padding: 2rem;
+
+  .row {
+    align-items: center;
+    height: 100vh;
+  }
 `;
 
-const CardContainer = styled.div`
+const transitionTime = "2.3s";
+
+const Card = styled.div`
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(10px);
-  color: var(--color-green);
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  height: 400px;
+  width: 100%;
+  margin: 0.625rem 0;
+  transition: ease all ${transitionTime};
+  perspective: 1300px;
   max-width: ${({ width }) => width || "450px"};
   max-height: ${({ height }) => height || "300px"};
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
 
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 5px 20px rgba(0, 95, 0, 0.5);
+  &:hover .cover {
+    transform: rotateX(0deg) rotateY(-180deg);
   }
 
-  &:hover .overlay {
-    opacity: 1;
+  &:hover .cover:before {
+    transform: translateZ(30px);
+  }
+
+  &:hover .cover:after {
+    background-color: black;
+  }
+
+  &:hover .cover h1 {
+    transform: translateZ(100px);
+  }
+
+  &:hover .card-back {
+    transform: translateZ(0px) rotateY(0deg);
   }
 `;
 
-const Overlay = styled.div`
+const Cover = styled.div`
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: ease all ${transitionTime};
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &:before {
+    content: "";
+    position: absolute;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    transition: ease all ${transitionTime};
+    transform-style: preserve-3d;
+    transform: translateZ(0px);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: ease all 1.3s;
+    background: rgba(0, 0, 0, 0.4);
+  }
+`;
+
+const CardTitle = styled.h1`
+  font-weight: 600;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-family: "Black Ops One", Arial, sans-serif;
+  color: white;
+  transform-style: preserve-3d;
+  transition: ease all ${transitionTime};
+  z-index: 3;
+  font-size: 1.3rem;
+  transform: translateZ(0px);
+`;
+
+const CardBack = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #0b0f08;
+  transition: ease all ${transitionTime};
+  transform: rotateY(180deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  flex-direction: column;
+  backface-visibility: hidden;
+
+  a {
+    transform-style: preserve-3d;
+    transition: ease transform ${transitionTime}, ease background 0.5s;
+    transform: rotateY(0deg);
+    border: 1px solid var(--color-white);
+    font-family: "Black Ops One", Arial, sans-serif;
+    font-weight: 200;
+    font-size: 1.2rem;
+    color: var(--color-white);
+    padding: 14px 32px;
+    outline: none;
+    text-decoration: none;
+    backface-visibility: hidden;
+
+    &:hover {
+      background-color: var(--color-white);
+      color: #0b0f08;
+    }
+  }
 `;
 
-const CardTitle = styled.h3`
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: #fff;
-  border-radius: 4px;
-`;
-
-const ProjectCard = memo(
-  ({
-    src,
-    alt,
-    title,
-    width,
-    height,
-    description,
-    gallery,
-    repoUrl,
-    deployUrl,
-    onSelect,
-  }) => {
-    const handleClick = () => {
-      // Envia os dados necessários para o ModalCard
-      onSelect({
-        src,
-        alt,
-        title,
-        width,
-        height,
-        description,
-        gallery,
-        repoUrl,
-        deployUrl,
-      });
-    };
-
-    return (
-      <CardContainer
-        width={width}
-        height={height}
-        onClick={handleClick}>
-        <ImageComponent
+// Ajustar para poder passar o parametro description
+const ProjectCard = ({
+  src,
+  alt,
+  title,
+  width,
+  height,
+  deployUrl,
+  repoUrl,
+}) => {
+  return (
+    <Card
+      width={width}
+      height={height}
+      className="card">
+      <Cover className="cover">
+        <img
           src={src}
           alt={alt}
-          width="100%"
-          height="100%"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
-        <Overlay className="overlay">
-          <CardTitle>{title}</CardTitle>
-        </Overlay>
-      </CardContainer>
-    );
-  }
-);
-
-ProjectCard.displayName = "ProjectCard";
+        <CardTitle>{title}</CardTitle>
+      </Cover>
+      {(repoUrl || deployUrl) && (
+        <CardBack className="card-back">
+          {repoUrl && (
+            <a
+              href={repoUrl}
+              target="_blank"
+              rel="noreferrer">
+              Repositório
+            </a>
+          )}
+          {deployUrl && (
+            <a
+              href={deployUrl}
+              target="_blank"
+              rel="noreferrer">
+              Ver Projeto
+            </a>
+          )}
+        </CardBack>
+      )}
+    </Card>
+  );
+};
 
 ProjectCard.propTypes = {
   src: PropTypes.string.isRequired,
@@ -109,21 +188,11 @@ ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   width: PropTypes.string,
   height: PropTypes.string,
-  description: PropTypes.string,
-  gallery: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-  ]),
-  repoUrl: PropTypes.string,
   deployUrl: PropTypes.string,
-  onSelect: PropTypes.func.isRequired,
+  repoUrl: PropTypes.string,
 };
 
 const CardMini = ({ cards }) => {
-  const [selectedCard, setSelectedCard] = useState(null);
-
-  const handleCloseModal = () => setSelectedCard(null);
-
   return (
     <>
       <CardSection>
@@ -131,16 +200,9 @@ const CardMini = ({ cards }) => {
           <ProjectCard
             key={index}
             {...card}
-            onSelect={setSelectedCard}
           />
         ))}
       </CardSection>
-      {selectedCard && (
-        <ModalCard
-          card={selectedCard}
-          onClose={handleCloseModal}
-        />
-      )}
     </>
   );
 };
@@ -153,15 +215,10 @@ CardMini.propTypes = {
       title: PropTypes.string.isRequired,
       width: PropTypes.string,
       height: PropTypes.string,
-      description: PropTypes.string,
-      gallery: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-      ]),
-      repoUrl: PropTypes.string,
       deployUrl: PropTypes.string,
+      repoUrl: PropTypes.string,
     })
   ).isRequired,
 };
 
-export default memo(CardMini);
+export default CardMini;
