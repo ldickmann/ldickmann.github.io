@@ -24,14 +24,17 @@ const Home = ({ toggleSidebar }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowHome(true);
-    }, 4500);
+    }, 0); // Não esquecer de ajustar o tempo para 4500ms
     return () => clearTimeout(timer);
   }, []);
 
   return showHome ? (
     <>
       <Container>
-        <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={false} />
+        <Navbar
+          toggleSidebar={toggleSidebar}
+          isSidebarOpen={false}
+        />
         <Banner />
         <Overlay>
           <Card />

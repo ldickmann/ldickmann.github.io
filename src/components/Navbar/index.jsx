@@ -3,25 +3,25 @@ import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import NavLinks from "../NavLinks";
+import DividerComponent from "../DividerComponent";
 
 const HeaderNavbar = styled.header`
   background-color: var(--color-black);
 `;
 
 const Navigation = styled.nav`
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  padding: 1rem 2rem;
-  width: 100%;
   box-sizing: border-box;
+  margin-inline: 0.625rem;
 `;
 
 const NavList = styled.ul`
   display: flex;
   list-style: none;
-  width: 100%;
+  max-width: 100%;
   transition: opacity 0.3s ease;
+  padding: 0;
 `;
 
 const NavItem = styled.li`
@@ -53,6 +53,11 @@ const Navbar = ({ toggleSidebar }) => {
   return (
     <HeaderNavbar>
       <Navigation>
+        <DividerComponent
+          orientation="horizontal"
+          width="250px"
+          height="1px"
+        />
         {isMobile && (
           <ToggleIcon onClick={toggleSidebar}>
             <FaBars
