@@ -75,9 +75,3 @@ export const ContainerImage = styled.div`
     display: none;
   }
 `;
-
-export const Divider = styled.div`
-  width: 1px;
-  height: 506px;
-  background-color: var(--color-green);
-`;

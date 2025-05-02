@@ -10,8 +10,8 @@ import {
   TitleFooter,
   ContainerSocialMedia,
   ContainerImage,
-  Divider,
 } from "./Banner.styles";
+import DividerComponent from "../DividerComponent";
 
 const Banner = () => {
   return (
@@ -28,22 +28,36 @@ const Banner = () => {
           <a
             href="https://www.linkedin.com/in/lucas-dickmann"
             target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin size={30} color={"#000000"} />
+            rel="noopener noreferrer">
+            <FaLinkedin
+              size={30}
+              color={"#000000"}
+            />
           </a>
           <a
             href="https://www.github.com/ldickmann"
             target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub size={30} color={"#000000"} />
+            rel="noopener noreferrer">
+            <FaGithub
+              size={30}
+              color={"#000000"}
+            />
           </a>
         </ContainerSocialMedia>
       </ContainerText>
       <ContainerImage>
-        <ImageComponent src={"./images/perfil.png"} alt={"Lucas Dickmann"} />
-        <Divider />
+        <ImageComponent
+          src={"./images/perfil.png"}
+          alt={"Lucas Dickmann"}
+        />
+        <DividerComponent
+          orientation="vertical"
+          width="2px"
+          height="500px"
+          variant="dotted"
+          dashSize={18}
+          dashGap={10}
+        />
       </ContainerImage>
     </BannerContainer>
   );
