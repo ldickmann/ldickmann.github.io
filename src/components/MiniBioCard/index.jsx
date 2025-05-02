@@ -1,22 +1,17 @@
 import styled from "styled-components";
+import DividerComponent from "../DividerComponent";
 
 const BioContainer = styled.div`
   background-color: var(--color-black-light);
   color: var(--color-white);
-  padding: 1.25rem;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 800px;
+  max-width: 100%;
+  height: 50vh;
   text-align: center;
-  margin: 20px auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 840px) {
+  /* @media (max-width: 840px) {
     max-width: 730px;
   }
 
@@ -26,26 +21,42 @@ const BioContainer = styled.div`
 
   @media (max-width: 550px) {
     max-width: 350px;
-  }
+  } */
 `;
 
 const BioTitle = styled.h3`
-  font-size: 1.8em;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
   color: var(--color-green);
 `;
 
 const BioText = styled.p`
-  font-size: 1em;
+  font-size: 1.1rem;
   line-height: 1.5;
   color: var(--color-white-medium);
+  margin-inline: 20rem;
+  margin-top: 4rem;
+`;
+
+const ContainerDivider = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
 `;
 
 const MiniBioCard = () => {
   return (
     <BioContainer>
       <BioTitle>Sobre Mim</BioTitle>
+      <ContainerDivider>
+        <DividerComponent
+          orientation="horizontal"
+          width="60px"
+          height="2px"
+          variant="solid"
+        />
+      </ContainerDivider>
       <BioText>
         Acredito que a tecnologia tem o poder de transformar vidas e estou
         comprometido em criar soluções inovadoras que facilitem o cotidiano das

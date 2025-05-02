@@ -55,8 +55,8 @@ const Banner = () => {
           width="2px"
           height="500px"
           variant="dotted"
-          dashSize={18}
-          dashGap={10}
+          dashSize={8}
+          dashGap={6}
         />
       </ContainerImage>
     </BannerContainer>
