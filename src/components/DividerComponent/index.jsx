@@ -6,7 +6,7 @@ const StyledDivider = styled.div`
   * tamanho do pontilhado e a distância entre eles & horizontal ou vertical
   */
   ${(props) =>
-    props.variant === "dotted"
+    props.$variant === "dotted"
       ? props.orientation === "vertical"
         ? `
   width: ${props.width};
@@ -14,9 +14,9 @@ const StyledDivider = styled.div`
   background: repeating-linear-gradient(
     to bottom,
     var(--color-green),
-    var(--color-green) ${props.dashSize}px,
-    transparent ${props.dashSize}px,
-    transparent ${props.dashSize + props.dashGap}px
+    var(--color-green) ${props.$dashSize}px,
+    transparent ${props.$dashSize}px,
+    transparent ${props.$dashSize + props.$dashGap}px
   );
   `
         : `
@@ -25,9 +25,9 @@ const StyledDivider = styled.div`
   background: repeating-linear-gradient(
     to right,
     var(--color-green),
-    var(--color-green) ${props.dashSize}px,
-    transparent ${props.dashSize}px,
-    transparent ${props.dashSize + props.dashGap}px
+    var(--color-green) ${props.$dashSize}px,
+    transparent ${props.$dashSize}px,
+    transparent ${props.$dashSize + props.$dashGap}px
   );
   `
       : `
@@ -50,9 +50,9 @@ const DividerComponent = ({
       orientation={orientation}
       width={width}
       height={height}
-      variant={variant}
-      dashSize={dashSize}
-      dashGap={dashGap}
+      $variant={variant}
+      $dashSize={dashSize}
+      $dashGap={dashGap}
     />
   );
 };
