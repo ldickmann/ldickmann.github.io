@@ -57,6 +57,7 @@ const Navbar = ({ toggleSidebar }) => {
           orientation="horizontal"
           width="250px"
           height="1px"
+          variant="solid"
         />
         {isMobile && (
           <ToggleIcon onClick={toggleSidebar}>
@@ -76,6 +77,12 @@ const Navbar = ({ toggleSidebar }) => {
             </NavItem>
           </NavList>
         )}
+        <DividerComponent
+          orientation="horizontal"
+          width="100%"
+          height="1px"
+          variant="solid"
+        />
       </Navigation>
     </HeaderNavbar>
   );
