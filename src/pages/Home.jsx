@@ -13,18 +13,7 @@ const Container = styled.div`
 `;
 
 const Overlay = styled.div`
-  /* position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  flex: 0 0 auto;
-  z-index: 999;
-  width: 90%; */
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
+  padding: 3rem;
 `;
 
 const Home = ({ toggleSidebar }) => {

@@ -32,13 +32,28 @@ function AppContent({ toggleSidebar, sidebarOpen, setSidebarOpen }) {
   return (
     <>
       {!isParticlesRoute && (
-        <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
+        <Navbar
+          toggleSidebar={toggleSidebar}
+          isSidebarOpen={sidebarOpen}
+        />
       )}
-      <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
+      <Sidebar
+        isOpen={sidebarOpen}
+        setIsOpen={setSidebarOpen}
+      />
       <Routes>
-        <Route path="/" element={<Home toggleSidebar={toggleSidebar} />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="*" element={<div>Página não encontrada...</div>} />
+        <Route
+          path="/"
+          element={<Home toggleSidebar={toggleSidebar} />}
+        />
+        <Route
+          path="/projects"
+          element={<Projects />}
+        />
+        <Route
+          path="*"
+          element={<div>Página não encontrada...</div>}
+        />
       </Routes>
       <Footer />
     </>

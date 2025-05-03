@@ -4,7 +4,7 @@ export const BannerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
   height: 70vh;
   padding: 0rem 10rem 6rem 10rem;
 

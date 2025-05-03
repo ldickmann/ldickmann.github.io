@@ -2,7 +2,7 @@ import styled from "styled-components";
 import DividerComponent from "../DividerComponent";
 
 const BioContainer = styled.div`
-  background-color: var(--color-black-light);
+  /* background-color: var(--color-black-light); */
   color: var(--color-white);
   max-width: 100%;
   height: 50vh;

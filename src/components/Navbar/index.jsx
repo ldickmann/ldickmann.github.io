@@ -6,7 +6,7 @@ import NavLinks from "../NavLinks";
 import DividerComponent from "../DividerComponent";
 
 const HeaderNavbar = styled.header`
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
 `;
 
 const Navigation = styled.nav`

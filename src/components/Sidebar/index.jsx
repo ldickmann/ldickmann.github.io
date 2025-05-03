@@ -10,7 +10,7 @@ const SidebarContainer = styled.div`
   left: ${({ $isOpen }) => ($isOpen ? "0" : "-250px")};
   height: 100%;
   width: 250px;
-  background-color: #000;
+  /* background-color: #000; */
   transition: left 0.3s ease-in-out;
   display: flex;
   flex-direction: column;

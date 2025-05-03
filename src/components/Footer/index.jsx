@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const FooterStyles = styled.footer`
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
   color: var(--color-white);
-  padding: 3rem 3rem;
+  padding: 1rem 3rem;
   text-align: center;
   font-size: 1.1rem;
 `;
