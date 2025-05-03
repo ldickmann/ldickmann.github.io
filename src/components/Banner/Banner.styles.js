@@ -8,6 +8,14 @@ export const BannerContainer = styled.div`
   height: 70vh;
   padding: 0rem 10rem 6rem 10rem;
 
+  @media screen and (max-width: 1090px) {
+    padding-inline: 3rem;
+  }
+
+  @media screen and (max-width: 850px) {
+    padding-inline: 2rem;
+  }
+
   @media (max-width: 769px) {
     padding-inline: 2rem;
   }
@@ -32,8 +40,12 @@ export const HeaderContainer = styled.div`
 
 export const Header = styled.h1`
   color: var(--color-white);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const FooterContainer = styled.div`
@@ -44,8 +56,12 @@ export const FooterContainer = styled.div`
 
 export const TitleFooter = styled.h1`
   color: var(--color-white);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const ContainerSocialMedia = styled.div`
@@ -65,35 +81,7 @@ export const ContainerSocialMedia = styled.div`
   }
 `;
 
-// export const ContainerImage = styled.div`
-//   display: flex;
-//   justify-content: end;
-//   align-items: center;
-//   width: 100%;
-//   gap: 4rem;
-//   position: relative;
-
-//   img {
-//     border-radius: 25%;
-//     background: radial-gradient(
-//       circle at 0% 50%,
-//       rgba(0, 244, 65, 0.5) 0%,
-//       rgba(0, 244, 65, 0.3) 100%
-//     );
-//     padding: 0.4rem;
-//     max-width: 360px;
-//     height: auto;
-//     transition: transform 0.3s ease;
-//   }
-
-//   @media (max-width: 650px) {
-//     display: none;
-//   }
-
-//   @media (max-width: 650px) {
-//     display: none;
-//   }
-// `;
+/* Acima de 1670px o espaço entre o title e a imagem é muito grande, da sensação de faltar algo */
 
 export const ContainerImage = styled.div`
   display: flex;
@@ -115,7 +103,7 @@ export const ContainerImage = styled.div`
       transform: translate(-50%, -50%);
       width: 350px;
       height: 490px;
-      border-radius: 22%;
+      border-radius: 20%;
       border: 4px #00f441 solid;
       z-index: 0;
     }
@@ -127,7 +115,7 @@ export const ContainerImage = styled.div`
     }
   }
 
-  @media (max-width: 650px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;

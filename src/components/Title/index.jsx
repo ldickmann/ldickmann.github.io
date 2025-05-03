@@ -11,11 +11,15 @@ const TitleContainer = styled.div`
 const TitleStyles = styled.h1`
   color: var(--color-green);
   font-family: var(--font-banner);
-  font-size: 2.25rem;
+  font-size: 3.25rem;
   margin: 1rem 0rem;
   text-transform: uppercase;
   overflow: hidden;
   white-space: pre-wrap;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 /**
