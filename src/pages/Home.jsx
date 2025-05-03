@@ -6,6 +6,7 @@ import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 import ParticlesComponent from "../components/Particles/particlesComponent";
 import MiniBioCard from "../components/MiniBioCard";
+import NewCard from "../components/NewCard";
 
 const Container = styled.div`
   display: flex;
@@ -14,6 +15,24 @@ const Container = styled.div`
 
 const Overlay = styled.div`
   padding: 3rem;
+`;
+
+const SectionCards = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+const ContainerCards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
 `;
 
 const Home = ({ toggleSidebar }) => {
@@ -39,6 +58,21 @@ const Home = ({ toggleSidebar }) => {
         </Overlay>
       </Container>
       <MiniBioCard />
+      <SectionCards>
+        <h2>Portfólio</h2>
+        <ContainerCards>
+          <NewCard
+            image="./images/smash-burger/home-smash-burger.png"
+            title="Smash Burger"
+            description="Aplicação Vue.js de delivery de hamburguers."
+          />
+          <NewCard
+            image="./images/component-login.jpg"
+            title="Componente de Login"
+            description="Componente de login em React.js."
+          />
+        </ContainerCards>
+      </SectionCards>
     </>
   ) : (
     <ParticlesComponent />
