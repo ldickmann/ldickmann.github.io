@@ -89,6 +89,13 @@ const Home = ({ toggleSidebar }) => {
             repoUrl="https://github.com/ldickmann/login-page"
             demoUrl="https://login-page-luks-dev.vercel.app/"
           />
+          <NewCard
+            image="./images/djangoSGE.png"
+            alt="Django SGE | Full Stack App - Django, Django REST & Bootstrap"
+            title="Django SGE - Django"
+            description="Aplicação Full-stack de Gerenciamento de Estoque"
+            repoUrl="https://github.com/ldickmann/djangoSGE"
+          />
         </ContainerCards>
       </SectionCards>
     </>
