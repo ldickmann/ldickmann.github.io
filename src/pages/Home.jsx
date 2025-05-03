@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import ParticlesComponent from "../components/Particles/particlesComponent";
 import MiniBioCard from "../components/MiniBioCard";
 import NewCard from "../components/NewCard";
+import DividerComponent from "../components/DividerComponent";
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +23,13 @@ const SectionCards = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+`;
+
+const TitleSection = styled.h2`
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color-green);
 `;
 
 const ContainerCards = styled.div`
@@ -32,7 +39,7 @@ const ContainerCards = styled.div`
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  width: 100%;
+  margin-top: 3rem;
 `;
 
 const Home = ({ toggleSidebar }) => {
@@ -59,7 +66,13 @@ const Home = ({ toggleSidebar }) => {
       </Container>
       <MiniBioCard />
       <SectionCards>
-        <h2>Portfólio</h2>
+        <TitleSection>Portfólio</TitleSection>
+        <DividerComponent
+          orientation="horizontal"
+          width="60px"
+          height="2px"
+          variant="solid"
+        />
         <ContainerCards>
           <NewCard
             image="./images/smash-burger/home-smash-burger.png"
