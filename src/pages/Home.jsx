@@ -38,8 +38,8 @@ const ContainerCards = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 2rem;
   margin-top: 3rem;
+  margin-bottom: 5rem;
 `;
 
 const Home = ({ toggleSidebar }) => {
@@ -48,7 +48,7 @@ const Home = ({ toggleSidebar }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowHome(true);
-    }, 0); // Não esquecer de ajustar o tempo para 4500ms
+    }, 4500); // 4.5 seconds
     return () => clearTimeout(timer);
   }, []);
 
@@ -95,6 +95,14 @@ const Home = ({ toggleSidebar }) => {
             title="Django SGE - Django"
             description="Aplicação Full-stack de Gerenciamento de Estoque"
             repoUrl="https://github.com/ldickmann/djangoSGE"
+          />
+          <NewCard
+            image="./images/meteora-app.png"
+            alt="Meteora Front End App - React.js"
+            title="Meteora - React.js"
+            description="Aplicação Front End de gerenciamento de tarefas."
+            repoUrl="https://github.com/ldickmann/ReactG7-ONE/tree/main/react-context-api"
+            demoUrl="https://react-context-api-meteora.vercel.app/"
           />
         </ContainerCards>
       </SectionCards>

@@ -72,9 +72,9 @@ const Navbar = ({ toggleSidebar }) => {
             <NavItem>
               <NavLinks to="/">Home</NavLinks>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLinks to="/projects">Projetos</NavLinks>
-            </NavItem>
+            </NavItem> */}
           </NavList>
         )}
         <DividerComponent

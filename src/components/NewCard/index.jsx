@@ -13,7 +13,7 @@ const ContainerCards = styled.div`
 const ImageCard = styled.div`
   width: 350px;
   height: 350px;
-  background-image: url(${(props) => props.image});
+  background-image: url(${(props) => props.$image});
   background-size: cover;
   background-position: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
@@ -61,7 +61,7 @@ const NewCard = memo(({ image, alt, demoUrl, repoUrl, title, description }) => {
   return (
     <ContainerCards>
       <ImageCard
-        image={image}
+        $image={image}
         alt={alt}
       />
       <ContainerInformation>

@@ -5,7 +5,6 @@ const BioContainer = styled.div`
   /* background-color: var(--color-black-light); */
   color: var(--color-white);
   max-width: 100%;
-  height: 50vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -28,6 +27,10 @@ const BioText = styled.p`
 
   @media screen and (max-width: 1120px) {
     margin-inline: 10rem;
+  }
+
+  @media screen and (max-width: 675px) {
+    margin-inline: 2rem;
   }
 `;
 
