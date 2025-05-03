@@ -76,13 +76,18 @@ const Home = ({ toggleSidebar }) => {
         <ContainerCards>
           <NewCard
             image="./images/smash-burger/home-smash-burger.png"
+            alt="Smash Burger | Front End App - Vue.js"
             title="Smash Burger"
             description="Aplicação Vue.js de delivery de hamburguers."
+            repoUrl="https://github.com/ldickmann/smash-burguer"
           />
           <NewCard
             image="./images/component-login.jpg"
+            alt="Componente de Login"
             title="Componente de Login"
             description="Componente de login em React.js."
+            repoUrl="https://github.com/ldickmann/login-page"
+            demoUrl="https://login-page-luks-dev.vercel.app/"
           />
         </ContainerCards>
       </SectionCards>

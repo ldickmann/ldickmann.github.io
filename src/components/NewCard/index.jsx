@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { memo } from "react";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const ContainerCards = styled.div`
   display: flex;
@@ -25,9 +26,9 @@ const ImageCard = styled.div`
   }
 `;
 
-const TextContainer = styled.div`
+const ContainerInformation = styled.div`
   width: 100%;
-  height: 120px;
+  height: 150px;
   background-color: var(--color-white);
   text-align: center;
   display: flex;
@@ -40,7 +41,7 @@ const TextContainer = styled.div`
 const Title = styled.h3`
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin: 0.2rem 0;
 `;
 
 const Description = styled.p`
@@ -49,14 +50,48 @@ const Description = styled.p`
   color: var(--color-black-light);
 `;
 
-const NewCard = memo(({ image, title, description }) => {
+const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const NewCard = memo(({ image, alt, demoUrl, repoUrl, title, description }) => {
   return (
     <ContainerCards>
-      <ImageCard image={image} />
-      <TextContainer>
+      <ImageCard
+        image={image}
+        alt={alt}
+      />
+      <ContainerInformation>
         <Title>{title}</Title>
         <Description>{description}</Description>
-      </TextContainer>
+        <IconContainer>
+          {demoUrl && (
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer">
+              <FaExternalLinkAlt
+                size={24}
+                color="var(--color-black)"
+              />
+            </a>
+          )}
+          {repoUrl && (
+            <a
+              href={repoUrl}
+              target="_blank"
+              rel="noopener noreferrer">
+              <FaGithub
+                size={24}
+                color="var(--color-black)"
+              />
+            </a>
+          )}
+        </IconContainer>
+      </ContainerInformation>
     </ContainerCards>
   );
 });
@@ -67,6 +102,9 @@ NewCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  demoUrl: PropTypes.string,
+  repoUrl: PropTypes.string,
 };
 
 export default NewCard;
