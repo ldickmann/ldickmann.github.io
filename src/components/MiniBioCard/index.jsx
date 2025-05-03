@@ -10,23 +10,10 @@ const BioContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 1;
-
-  /* @media (max-width: 840px) {
-    max-width: 730px;
-  }
-
-  @media (max-width: 768px) {
-    max-width: 400px;
-  }
-
-  @media (max-width: 550px) {
-    max-width: 350px;
-  } */
 `;
 
 const BioTitle = styled.h3`
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: var(--color-green);
@@ -38,6 +25,10 @@ const BioText = styled.p`
   color: var(--color-white-medium);
   margin-inline: 20rem;
   margin-top: 4rem;
+
+  @media screen and (max-width: 1120px) {
+    margin-inline: 10rem;
+  }
 `;
 
 const ContainerDivider = styled.div`

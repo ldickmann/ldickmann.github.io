@@ -1,5 +1,6 @@
 :root {
   --font-banner: "Press Start 2P", serif;
+  --font-secondary: "Black Ops One", sans-serif;
 
   --color-green: #00f441;
   --color-green-dark: #223f23;
@@ -16,4 +17,5 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: var(--font-secondary);
 }
