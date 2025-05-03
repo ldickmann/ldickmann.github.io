@@ -10,12 +10,21 @@ import MiniBioCard from "../components/MiniBioCard";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const Overlay = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   flex: 0 0 auto;
-  margin-top: -4.5rem;
   z-index: 999;
+  width: 90%;
+
+  @media (min-width: 1024px) {
+    width: 75%;
+  }
 `;
 
 const Home = ({ toggleSidebar }) => {

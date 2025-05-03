@@ -10,6 +10,7 @@ const BioContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 1;
 
   /* @media (max-width: 840px) {
     max-width: 730px;

@@ -65,11 +65,67 @@ export const ContainerSocialMedia = styled.div`
   }
 `;
 
+// export const ContainerImage = styled.div`
+//   display: flex;
+//   justify-content: end;
+//   align-items: center;
+//   width: 100%;
+//   gap: 4rem;
+//   position: relative;
+
+//   img {
+//     border-radius: 25%;
+//     background: radial-gradient(
+//       circle at 0% 50%,
+//       rgba(0, 244, 65, 0.5) 0%,
+//       rgba(0, 244, 65, 0.3) 100%
+//     );
+//     padding: 0.4rem;
+//     max-width: 360px;
+//     height: auto;
+//     transition: transform 0.3s ease;
+//   }
+
+//   @media (max-width: 650px) {
+//     display: none;
+//   }
+
+//   @media (max-width: 650px) {
+//     display: none;
+//   }
+// `;
+
 export const ContainerImage = styled.div`
   display: flex;
   justify-content: end;
+  align-items: center;
   width: 100%;
   gap: 4rem;
+  position: relative;
+
+  .profile-wrapper {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 490px;
+      border-radius: 22%;
+      border: 4px #00f441 solid;
+      z-index: 0;
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+    }
+  }
 
   @media (max-width: 650px) {
     display: none;

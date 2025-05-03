@@ -13,13 +13,11 @@ import Carousel from "../Carousel";
 
 const CardStyles = styled.div`
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 2rem 0rem 2rem 0rem;
+  justify-content: center;  
+  padding: 2rem 2rem 2rem 2rem;
   background-color: var(--color-beige);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.723);
-  max-width: 80%;
 
   @media (max-width: 769px) {
     display: none;
@@ -45,8 +43,9 @@ export const IconList = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 3rem;
+
+  flex-wrap: wrap;
 `;
 
 export const IconItem = styled.div`

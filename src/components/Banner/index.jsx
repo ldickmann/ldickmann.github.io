@@ -11,7 +11,6 @@ import {
   ContainerSocialMedia,
   ContainerImage,
 } from "./Banner.styles";
-import DividerComponent from "../DividerComponent";
 
 const Banner = () => {
   return (
@@ -46,18 +45,14 @@ const Banner = () => {
         </ContainerSocialMedia>
       </ContainerText>
       <ContainerImage>
-        <ImageComponent
-          src={"./images/perfil.png"}
-          alt={"Lucas Dickmann"}
-        />
-        <DividerComponent
-          orientation="vertical"
-          width="2px"
-          height="500px"
-          variant="dotted"
-          dashSize={8}
-          dashGap={6}
-        />
+        <div className="profile-wrapper">
+          <ImageComponent
+            src={"./images/perfil.png"}
+            alt={"Lucas E. Dickmann"}
+            width={"100%"}
+            height={"450px"}
+          />
+        </div>
       </ContainerImage>
     </BannerContainer>
   );
