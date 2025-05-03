@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import styled from "styled-components";
 import Card from "../components/Card";
 import Banner from "../components/Banner";
@@ -42,7 +42,7 @@ const ContainerCards = styled.div`
   margin-bottom: 5rem;
 `;
 
-const Home = ({ toggleSidebar }) => {
+const Home = () => {
   const [showHome, setShowHome] = useState(false);
 
   useEffect(() => {
@@ -55,10 +55,7 @@ const Home = ({ toggleSidebar }) => {
   return showHome ? (
     <>
       <Container>
-        <Navbar
-          toggleSidebar={toggleSidebar}
-          isSidebarOpen={false}
-        />
+        <Navbar />
         <Banner />
         <Overlay>
           <Card />
@@ -112,8 +109,8 @@ const Home = ({ toggleSidebar }) => {
   );
 };
 
-Home.propTypes = {
-  toggleSidebar: PropTypes.func.isRequired,
-};
+// Home.propTypes = {
+//   toggleSidebar: PropTypes.func.isRequired,
+// };
 
 export default Home;

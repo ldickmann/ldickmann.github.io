@@ -86,8 +86,8 @@ const Navbar = () => {
 };
 
 Navbar.propTypes = {
-  toggleSidebar: PropTypes.func.isRequired,
-  isSidebarOpen: PropTypes.bool.isRequired,
+  toggleSidebar: PropTypes.func,
+  isSidebarOpen: PropTypes.bool,
 };
 
 export default Navbar;
