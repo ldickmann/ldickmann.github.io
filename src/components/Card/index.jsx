@@ -14,12 +14,10 @@ import Carousel from "../Carousel";
 const CardStyles = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 auto;
-  padding: 2rem 0rem 2rem 0rem;
+  padding: 2rem 2rem 2rem 2rem;
   background-color: var(--color-beige);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.723);
-  max-width: 80%;
 
   @media (max-width: 769px) {
     display: none;
@@ -45,8 +43,11 @@ export const IconList = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 3rem;
+
+  @media screen and (max-width: 1277px) {
+    gap: 1rem;
+  }
 `;
 
 export const IconItem = styled.div`
@@ -73,7 +74,10 @@ const Card = () => {
         <IconList>
           {icons.map((icon, index) => (
             <IconItem key={index}>
-              <icon.component size={icon.size} color={icon.color} />
+              <icon.component
+                size={icon.size}
+                color={icon.color}
+              />
             </IconItem>
           ))}
         </IconList>
@@ -82,7 +86,10 @@ const Card = () => {
         <Carousel>
           {icons.map((icon, index) => (
             <IconItem key={index}>
-              <icon.component size={icon.size} color={icon.color} />
+              <icon.component
+                size={icon.size}
+                color={icon.color}
+              />
             </IconItem>
           ))}
         </Carousel>

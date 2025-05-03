@@ -4,9 +4,17 @@ export const BannerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
   height: 70vh;
   padding: 0rem 10rem 6rem 10rem;
+
+  @media screen and (max-width: 1090px) {
+    padding-inline: 3rem;
+  }
+
+  @media screen and (max-width: 850px) {
+    padding-inline: 2rem;
+  }
 
   @media (max-width: 769px) {
     padding-inline: 2rem;
@@ -32,8 +40,12 @@ export const HeaderContainer = styled.div`
 
 export const Header = styled.h1`
   color: var(--color-white);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const FooterContainer = styled.div`
@@ -44,8 +56,12 @@ export const FooterContainer = styled.div`
 
 export const TitleFooter = styled.h1`
   color: var(--color-white);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const ContainerSocialMedia = styled.div`
@@ -65,19 +81,41 @@ export const ContainerSocialMedia = styled.div`
   }
 `;
 
+/* Acima de 1670px o espaço entre o title e a imagem é muito grande, da sensação de faltar algo */
+
 export const ContainerImage = styled.div`
   display: flex;
   justify-content: end;
+  align-items: center;
   width: 100%;
   gap: 4rem;
+  position: relative;
 
-  @media (max-width: 650px) {
+  .profile-wrapper {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 490px;
+      border-radius: 20%;
+      border: 4px #00f441 solid;
+      z-index: 0;
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+    }
+  }
+
+  @media screen and (max-width: 778px) {
     display: none;
   }
-`;
-
-export const Divider = styled.div`
-  width: 1px;
-  height: 506px;
-  background-color: var(--color-green);
 `;

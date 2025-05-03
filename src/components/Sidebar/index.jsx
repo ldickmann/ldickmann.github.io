@@ -9,8 +9,7 @@ const SidebarContainer = styled.div`
   top: 0;
   left: ${({ $isOpen }) => ($isOpen ? "0" : "-250px")};
   height: 100%;
-  width: 250px;
-  background-color: #000;
+  width: 100px;
   transition: left 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -24,7 +23,7 @@ const SidebarHeader = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
 `;
 
 const StyledNavLink = styled(NavLinks)`
@@ -57,9 +56,9 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           <StyledNavLink to="/" isSidebar>
             Home
           </StyledNavLink>
-          <StyledNavLink to="/projects" isSidebar>
+          {/* <StyledNavLink to="/projects" isSidebar>
             Projetos
-          </StyledNavLink>
+          </StyledNavLink> */}
         </>
       )}
     </SidebarContainer>

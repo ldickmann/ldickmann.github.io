@@ -119,7 +119,6 @@ const CardBack = styled.div`
     transition: ease transform ${transitionTime}, ease background 0.5s;
     transform: rotateY(0deg);
     border: 1px solid var(--color-white);
-    font-family: "Black Ops One", Arial, sans-serif;
     font-weight: 200;
     font-size: 1.2rem;
     color: var(--color-white);
