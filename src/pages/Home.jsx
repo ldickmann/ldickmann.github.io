@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import PropTypes from "prop-types";
 import styled from "styled-components";
 import Card from "../components/Card";
 import Banner from "../components/Banner";
@@ -101,6 +100,13 @@ const Home = () => {
             repoUrl="https://github.com/ldickmann/ReactG7-ONE/tree/main/react-context-api"
             demoUrl="https://react-context-api-meteora.vercel.app/"
           />
+          <NewCard
+            image="./images/django-cars-app.png"
+            alt="Django Cars App - Django"
+            title="Django Cars - Django"
+            description="Aplicação Full Stack de gerenciamento de carros."
+            repoUrl="https://github.com/ldickmann/djangoCars"
+          />
         </ContainerCards>
       </SectionCards>
     </>
@@ -108,9 +114,5 @@ const Home = () => {
     <ParticlesComponent />
   );
 };
-
-// Home.propTypes = {
-//   toggleSidebar: PropTypes.func.isRequired,
-// };
 
 export default Home;
