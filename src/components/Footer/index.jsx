@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import DividerComponent from "../DividerComponent";
+import React from "react";
 
 const FooterStyles = styled.footer`
-  /* background-color: var(--color-black); */
   color: var(--color-white);
   padding: 1rem 3rem;
   text-align: center;
@@ -42,4 +42,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);
