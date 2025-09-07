@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
@@ -17,38 +23,50 @@ const GlobalContainer = styled.div`
   width: 100%;
 `;
 
+const AppContent = () => {
+  const location = useLocation();
+  const hideFooterRoutes = ["/intro"]; // Rotas onde o Footer não deve aparecer
+  const shouldHideFooter = !hideFooterRoutes.includes(location.pathname);
+
+  return (
+    <>
+      <GlobalContainer>
+        <Routes>
+          <Route
+            path="/intro"
+            element={<Intro />}
+          />
+          <Route
+            path="/home"
+            element={<Home />}
+          />
+          <Route
+            path="/projects"
+            element={<Projects />}
+          />
+          <Route
+            path="/"
+            element={<Navigate to="/intro" />}
+          />
+          <Route
+            path="*"
+            element={<div>Página não encontrada...</div>}
+          />
+        </Routes>
+      </GlobalContainer>
+      {shouldHideFooter && <Footer />}
+    </>
+  );
+};
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter basename="/">
         <Suspense fallback={<div>Loading...</div>}>
-          <GlobalContainer>
-            <Routes>
-              <Route
-                path="/intro"
-                element={<Intro />}
-              />
-              <Route
-                path="/home"
-                element={<Home />}
-              />
-              <Route
-                path="/projects"
-                element={<Projects />}
-              />
-              <Route
-                path="/"
-                element={<Navigate to="/intro" />}
-              />
-              <Route
-                path="*"
-                element={<div>Página não encontrada...</div>}
-              />
-            </Routes>
-          </GlobalContainer>
+          <AppContent />
         </Suspense>
-        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
