@@ -38,6 +38,15 @@ const CategoryTitle = styled.h3`
   text-align: center;
 `;
 
+const CategoryDescription = styled.p`
+  font-size: 0.8em;
+  color: var(--color-white);
+  text-align: center;
+  max-width: 800px;
+  margin: 1rem auto 0;
+  line-height: 1.6;
+`;
+
 const ContainerCards = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -69,6 +78,12 @@ const Home = () => {
         />
 
         <CategoryTitle>Projetos Front-end</CategoryTitle>
+        <CategoryDescription>
+          Aplicações modernas focadas na experiência do usuário, desenvolvidas
+          com tecnologias como React.js e Vue.js. Cada projeto demonstra
+          diferentes aspectos do desenvolvimento front-end, desde interfaces
+          responsivas até componentes reutilizáveis.
+        </CategoryDescription>
         <ContainerCards>
           <NewCard
             image="/images/smash-burger/home-smash-burger.png"
@@ -93,17 +108,32 @@ const Home = () => {
             repoUrl="https://github.com/ldickmann/maos-de-tesoura"
             demoUrl="https://ldickmann.github.io/maos-de-tesoura/"
           />
+        </ContainerCards>
+
+        <CategoryTitle>Projetos Acadêmicos</CategoryTitle>
+        <CategoryDescription>
+          Projetos desenvolvidos durante a graduação em Análise e
+          Desenvolvimento de Sistemas, representando trabalhos colaborativos e
+          aplicação prática dos conhecimentos adquiridos no curso.
+        </CategoryDescription>
+        <ContainerCards>
           <NewCard
             image="/images/how-arquitetura.png"
             alt="How Arquitetura - HTML & CSS"
             title="Projeto Integrador ADS"
-            description="Projeto de um site institucional para uma arquiteta, este sendo parte do curso de Análise e Desenvolvimento de Sistemas."
+            description="Projeto de um site institucional para uma arquiteta desenvolvido em grupo durante o curso de Análise e Desenvolvimento de Sistemas."
             repoUrl="https://github.com/MALLG-Sistemas/hands-on-work-v"
             demoUrl="https://mallg-sistemas.github.io/hands-on-work-v/"
           />
         </ContainerCards>
 
         <CategoryTitle>Projetos Full-stack</CategoryTitle>
+        <CategoryDescription>
+          Aplicações completas que integram front-end e back-end, demonstrando
+          competências em desenvolvimento web integral. Projetos que abrangem
+          desde a interface do usuário até a gestão de dados e lógica de
+          negócio.
+        </CategoryDescription>
         <ContainerCards>
           <NewCard
             image="/images/djangoSGE.png"
