@@ -69,12 +69,12 @@ const Projects = () => {
             repoUrl="https://github.com/ldickmann/djangoSGE"
           />
           <NewCard
-            image="/images/meteora-app.png"
-            alt="Meteora Front End App - React.js"
-            title="Meteora - React.js"
-            description="Aplicação Front End de gerenciamento de tarefas."
-            repoUrl="https://github.com/ldickmann/ReactG7-ONE/tree/main/react-context-api"
-            demoUrl="https://react-context-api-meteora.vercel.app/"
+            image="/images/maos-de-tesoura.png"
+            alt="Aplicação Mãos de Tesoura - Vue.js"
+            title="Mãos de Tesoura - Vue.js"
+            description="Aplicação Front-end de agendamento de serviços e landing page."
+            repoUrl="https://github.com/ldickmann/maos-de-tesoura"
+            demoUrl="https://ldickmann.github.io/maos-de-tesoura/"
           />
           <NewCard
             image="/images/django-cars-app.png"

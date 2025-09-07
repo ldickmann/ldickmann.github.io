@@ -68,24 +68,6 @@ const Home = () => {
           variant="solid"
         />
 
-        <CategoryTitle>Projetos Full-stack</CategoryTitle>
-        <ContainerCards>
-          <NewCard
-            image="/images/djangoSGE.png"
-            alt="Django SGE | Full Stack App - Django, Django REST & Bootstrap"
-            title="Django SGE - Django"
-            description="Sistema de Gerenciamento de Estoque completo com Django, incluindo controle de produtos, categorias e fornecedores."
-            repoUrl="https://github.com/ldickmann/djangoSGE"
-          />
-          <NewCard
-            image="/images/django-cars-app.png"
-            alt="Django Cars App - Django"
-            title="Django Cars - Django"
-            description="Aplicação para gerenciamento de concessionária de carros, permitindo cadastro e consulta de veículos."
-            repoUrl="https://github.com/ldickmann/djangoCars"
-          />
-        </ContainerCards>
-
         <CategoryTitle>Projetos Front-end</CategoryTitle>
         <ContainerCards>
           <NewCard
@@ -104,12 +86,31 @@ const Home = () => {
             demoUrl="https://login-page-luks-dev.vercel.app/"
           />
           <NewCard
-            image="/images/meteora-app.png"
-            alt="Meteora Front End App - React.js"
-            title="Meteora - React.js"
-            description="Aplicação de e-commerce para a loja fictícia Meteora, utilizando React Context API para gerenciamento de estado."
-            repoUrl="https://github.com/ldickmann/ReactG7-ONE/tree/main/react-context-api"
-            demoUrl="https://react-context-api-meteora.vercel.app/"
+            image="/images/maos-de-tesoura.png"
+            alt="Aplicação Mãos de Tesoura - Vue.js"
+            title="Mãos de Tesoura - Vue.js"
+            description="Aplicação Front-end de agendamento de serviços e landing page."
+            repoUrl="https://github.com/ldickmann/maos-de-tesoura"
+            demoUrl="https://ldickmann.github.io/maos-de-tesoura/"
+          />
+          <NewCard
+            image="/images/how-arquitetura.png"
+            alt="How Arquitetura - HTML & CSS"
+            title="Projeto Integrador ADS"
+            description="Projeto de um site institucional para uma arquiteta, este sendo parte do curso de Análise e Desenvolvimento de Sistemas."
+            repoUrl="https://github.com/MALLG-Sistemas/hands-on-work-v"
+            demoUrl="https://mallg-sistemas.github.io/hands-on-work-v/"
+          />
+        </ContainerCards>
+
+        <CategoryTitle>Projetos Full-stack</CategoryTitle>
+        <ContainerCards>
+          <NewCard
+            image="/images/djangoSGE.png"
+            alt="Django SGE | Full Stack App - Django, Django REST & Bootstrap"
+            title="Django SGE - Django"
+            description="Sistema de Gerenciamento de Estoque completo com Django, incluindo controle de produtos, categorias e fornecedores."
+            repoUrl="https://github.com/ldickmann/djangoSGE"
           />
         </ContainerCards>
       </SectionCards>
