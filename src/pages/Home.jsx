@@ -9,10 +9,13 @@ import DividerComponent from "../components/DividerComponent";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const Overlay = styled.div`
-  padding: 3rem;
+  padding: 3rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const SectionCards = styled.section`
@@ -20,6 +23,9 @@ const SectionCards = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
 `;
 
 const TitleSection = styled.h2`
@@ -55,6 +61,8 @@ const ContainerCards = styled.div`
   gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 5rem;
+  width: 100%;
+  max-width: 1200px;
 `;
 
 const Home = () => {
