@@ -2,22 +2,28 @@ import styled from "styled-components";
 
 export const BannerContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   /* background-color: var(--color-black); */
   height: 70vh;
-  padding: 0rem 10rem 6rem 10rem;
+  padding-bottom: 5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 3rem;
+  box-sizing: border-box;
+  gap: 2rem;
 
   @media screen and (max-width: 1090px) {
-    padding-inline: 3rem;
+    padding-inline: 2rem;
   }
 
   @media screen and (max-width: 850px) {
-    padding-inline: 2rem;
+    padding-inline: 1.5rem;
   }
 
   @media (max-width: 769px) {
-    padding-inline: 2rem;
+    padding-inline: 1rem;
   }
 
   @media (max-width: 430px) {
@@ -30,6 +36,7 @@ export const ContainerText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 0.5;
 `;
 
 export const HeaderContainer = styled.div`
@@ -50,8 +57,8 @@ export const Header = styled.h1`
 
 export const FooterContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: flex-start;
+  margin-left: 8rem;
 `;
 
 export const TitleFooter = styled.h1`
@@ -85,11 +92,9 @@ export const ContainerSocialMedia = styled.div`
 
 export const ContainerImage = styled.div`
   display: flex;
-  justify-content: end;
   align-items: center;
-  width: 100%;
+  flex: 0.5;
   gap: 4rem;
-  position: relative;
 
   .profile-wrapper {
     position: relative;

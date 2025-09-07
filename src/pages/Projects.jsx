@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const SectionCards = styled.section`
@@ -13,7 +14,9 @@ const SectionCards = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding: 3rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const TitleSection = styled.h2`
@@ -31,6 +34,8 @@ const ContainerCards = styled.div`
   gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 5rem;
+  width: 100%;
+  max-width: 1200px;
 `;
 
 const Projects = () => {
