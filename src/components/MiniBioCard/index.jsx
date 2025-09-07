@@ -53,14 +53,11 @@ const MiniBioCard = () => {
         />
       </ContainerDivider>
       <BioText>
-        Acredito que a tecnologia tem o poder de transformar vidas e estou
-        comprometido em criar soluções inovadoras que facilitem o cotidiano das
-        pessoas. Sempre atento às tendências do mercado, busco oportunidades que
-        me permitam aplicar e expandir meu conhecimento, contribuindo para o
-        crescimento da área de desenvolvimento de sistemas. Principais
-        tecnologias que utilizo nos meus projetos pessoais: Python, JavaScript
-        React, Vue.js Bootstrap, Quasar Framework, Styled-Compontes, Node.js,
-        Django.
+        Minha relação com a tecnologia começou ainda na infância, quando lembro de observar meu pai trabalhando em um computador já amarelado pelo tempo, desenhando no AutoCAD. Aquela cena ficou gravada na minha memória e despertou minha curiosidade em entender como máquinas e programas funcionavam.
+
+Anos depois, essa curiosidade se transformou em escolha de carreira. Hoje, sou Desenvolvedor Full-Stack em formação, com experiência em Vue.js, React.js, Quasar Framework, Python, Django e SQL. Já atuei em projetos que vão desde o desenvolvimento de sistemas de gestão até a criação de interfaces responsivas e acessíveis, sempre aplicando boas práticas e explorando o potencial da tecnologia para transformar ideias em soluções reais.
+
+Atualmente, curso Análise e Desenvolvimento de Sistemas na UNIVALI, sigo me especializando em tecnologias modernas e busco oportunidades para aprender, evoluir e contribuir com projetos inovadores.
       </BioText>
     </BioContainer>
   );
