@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const BannerContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   /* background-color: var(--color-black); */
   height: 70vh;
-  padding: 0rem 2rem 6rem 2rem;
+  padding: 0rem 3rem 5rem 3rem;
   width: 100%;
 
   @media screen and (max-width: 1090px) {
@@ -52,8 +52,8 @@ export const Header = styled.h1`
 
 export const FooterContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: flex-start;
+  margin-left: 8rem;
 `;
 
 export const TitleFooter = styled.h1`
@@ -87,7 +87,6 @@ export const ContainerSocialMedia = styled.div`
 
 export const ContainerImage = styled.div`
   display: flex;
-  justify-content: end;
   align-items: center;
   flex: 1;
   gap: 4rem;
