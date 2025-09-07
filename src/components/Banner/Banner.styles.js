@@ -6,18 +6,19 @@ export const BannerContainer = styled.div`
   align-items: center;
   /* background-color: var(--color-black); */
   height: 70vh;
-  padding: 0rem 10rem 6rem 10rem;
+  padding: 0rem 2rem 6rem 2rem;
+  width: 100%;
 
   @media screen and (max-width: 1090px) {
-    padding-inline: 3rem;
+    padding-inline: 2rem;
   }
 
   @media screen and (max-width: 850px) {
-    padding-inline: 2rem;
+    padding-inline: 1.5rem;
   }
 
   @media (max-width: 769px) {
-    padding-inline: 2rem;
+    padding-inline: 1rem;
   }
 
   @media (max-width: 430px) {
@@ -30,6 +31,7 @@ export const ContainerText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
 `;
 
 export const HeaderContainer = styled.div`
@@ -87,7 +89,7 @@ export const ContainerImage = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
-  width: 100%;
+  flex: 1;
   gap: 4rem;
   position: relative;
 
