@@ -6,10 +6,10 @@ import DividerComponent from "../DividerComponent";
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 4rem;
   background: linear-gradient(
     145deg,
     rgba(34, 63, 35, 0.1),
@@ -22,14 +22,15 @@ const FormContainer = styled.div`
 
   @media (max-width: 768px) {
     padding: 1.5rem;
-    margin: 0 1rem;
+    margin: 0;
+    border-radius: 10px;
   }
 `;
 
 const FormTitle = styled.h2`
   color: var(--color-green);
   font-family: var(--font-banner);
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   text-align: center;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -42,9 +43,9 @@ const FormTitle = styled.h2`
 const FormSubtitle = styled.p`
   color: var(--color-white-medium);
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.6;
+
 `;
 
 const FormGroup = styled.div`
@@ -105,7 +106,6 @@ const TextArea = styled.textarea`
   border-radius: 8px;
   color: var(--color-white);
   font-size: 1rem;
-  padding: 1rem;
   outline: none;
   transition: all 0.3s ease;
   font-family: var(--font-secondary);
@@ -237,7 +237,6 @@ const ContactForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
     message: "",
   });
 
@@ -258,10 +257,6 @@ const ContactForm = ({ onSubmit }) => {
       newErrors.email = "Email inválido";
     }
 
-    if (!formData.subject.trim()) {
-      newErrors.subject = "Assunto é obrigatório";
-    }
-
     if (!formData.message.trim()) {
       newErrors.message = "Mensagem é obrigatória";
     } else if (formData.message.trim().length < 10) {
@@ -279,7 +274,7 @@ const ContactForm = ({ onSubmit }) => {
       [name]: value,
     }));
 
-    // Clear error when user starts typing
+    // Limpar erro quando o usuário começa a digitar
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -298,11 +293,11 @@ const ContactForm = ({ onSubmit }) => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call or use the provided onSubmit function
+      // Simule uma chamada de API ou use a função onSubmit fornecida
       if (onSubmit) {
         await onSubmit(formData);
       } else {
-        // Simulate API delay
+        // Simular o delary da API
         await new Promise((resolve) => setTimeout(resolve, 2000));
       }
 
@@ -310,11 +305,10 @@ const ContactForm = ({ onSubmit }) => {
       setFormData({
         name: "",
         email: "",
-        subject: "",
         message: "",
       });
 
-      // Hide success message after 5 seconds
+      // Ocultar mensagem de sucesso após 5 segundos
       setTimeout(() => setShowSuccess(false), 5000);
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
@@ -366,20 +360,6 @@ const ContactForm = ({ onSubmit }) => {
             $hasError={!!errors.email}
           />
           <ErrorMessage $show={!!errors.email}>{errors.email}</ErrorMessage>
-        </FormGroup>
-
-        <FormGroup>
-          <Label htmlFor="subject">Assunto *</Label>
-          <InputBase
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleInputChange}
-            placeholder="Assunto da mensagem"
-            $hasError={!!errors.subject}
-          />
-          <ErrorMessage $show={!!errors.subject}>{errors.subject}</ErrorMessage>
         </FormGroup>
 
         <FormGroup>
