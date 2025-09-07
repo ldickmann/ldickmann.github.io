@@ -22,10 +22,13 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
 
       - name: Instalar Yarn
         run: npm install -g yarn
+
+      - name: Remover package-lock.json se existir
+        run: rm -f package-lock.json
 
       - name: Instalar dependências
         run: yarn install --frozen-lockfile
