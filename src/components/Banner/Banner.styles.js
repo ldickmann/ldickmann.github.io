@@ -6,8 +6,13 @@ export const BannerContainer = styled.div`
   align-items: center; */
   /* background-color: var(--color-black); */
   height: 70vh;
-  padding: 0rem 3rem 5rem 3rem;
+  padding-bottom: 5rem;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 3rem;
+  box-sizing: border-box;
+  gap: 2rem;
 
   @media screen and (max-width: 1090px) {
     padding-inline: 2rem;
@@ -31,7 +36,7 @@ export const ContainerText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1;
+  flex: 0.5;
 `;
 
 export const HeaderContainer = styled.div`
@@ -88,9 +93,8 @@ export const ContainerSocialMedia = styled.div`
 export const ContainerImage = styled.div`
   display: flex;
   align-items: center;
-  flex: 1;
+  flex: 0.5;
   gap: 4rem;
-  position: relative;
 
   .profile-wrapper {
     position: relative;
