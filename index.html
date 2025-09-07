@@ -2,6 +2,26 @@
 <html lang="pt-br">
 
 <head>
+  <script type="text/javascript">
+    // Verifica se há redirecionamento do 404.html
+    (function (l) {
+      if (l.search) {
+        var q = {};
+        l.search.slice(1).split('&').forEach(function (v) {
+          var a = v.split('=');
+          q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+        });
+        if (q.p !== undefined) {
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + (q.p || '') +
+            (q.q ? ('?' + q.q) : '') +
+            l.hash
+          );
+        }
+      }
+    }(window.location))
+  </script>
+
   <!-- Google tag (gtag.js) - Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX1833GPC4"></script>
   <script>
@@ -29,13 +49,13 @@
   <meta http-equiv="Expires" content="6000" />
 
   <!-- Reforço da tag de título -->
-  <meta itemprop="name" content="Dev Luks - Lucas E. Dickmann">
+  <meta itemprop="name" content="Code Luks - Lucas E. Dickmann">
   <meta itemprop="description"
     content="Conheça o portfólio de Lucas Elias Dickmann, desenvolvedor web. Projetos com React, Django, Vue.js e mais.">
   <meta itemprop="image" content="https://ldickmann.github.io/apple-touch-icon.png">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Dev Luks - Lucas E. Dickmann" />
+  <meta property="og:title" content="Code Luks - Lucas E. Dickmann" />
   <meta property="og:description"
     content="Conheça o portfólio de Lucas Elias Dickmann, desenvolvedor web. Confira meus projetos e habilidades técnicas." />
   <meta property="og:image" content="https://ldickmann.github.io/apple-touch-icon.png" />
@@ -43,11 +63,11 @@
   <meta property="og:url" content="https://ldickmann.github.io/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="Dev Luks - Lucas Elias Dickmann" />
+  <meta property="og:site_name" content="Code Luks - Lucas Elias Dickmann" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dev Luks - Lucas Elias Dickmann" />
+  <meta name="twitter:title" content="Code Luks - Lucas Elias Dickmann" />
   <meta name="twitter:description"
     content="Portfólio de Lucas E. Dickmann com projetos em React, Django, Vue.js, e mais." />
   <meta name="twitter:image" content="https://ldickmann.github.io/apple-touch-icon.png" />
@@ -55,7 +75,7 @@
 
   <!-- Acessibilidade e Indexação -->
   <meta name="theme-color" content="#0a192f" />
-  <meta name="application-name" content="Dev Luks" />
+  <meta name="application-name" content="Code Luks" />
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -71,7 +91,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Press+Start+2P&display=swap"
     rel="stylesheet">
 
-  <title>Dev Luks</title>
+  <title>Code Luks</title>
   <script type="module" src="/src/main.jsx"></script>
 </head>
 
