@@ -10,6 +10,7 @@ import {
 import { DiDjango } from "react-icons/di";
 import { SiQuasar } from "react-icons/si";
 import Carousel from "../Carousel";
+import Icon from "../Icon";
 
 const CardStyles = styled.div`
   display: flex;
@@ -50,12 +51,6 @@ export const IconList = styled.div`
   }
 `;
 
-export const IconItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const icons = [
   { component: FaPython, size: 70, color: "white" },
   { component: FaJs, size: 70, color: "white" },
@@ -68,31 +63,23 @@ const icons = [
 ];
 
 const Card = () => {
+  const renderIcons = () =>
+    icons.map((icon, index) => (
+      <Icon
+        key={index}
+        component={icon.component}
+        size={icon.size}
+        color={icon.color}
+      />
+    ));
+
   return (
     <>
       <CardStyles>
-        <IconList>
-          {icons.map((icon, index) => (
-            <IconItem key={index}>
-              <icon.component
-                size={icon.size}
-                color={icon.color}
-              />
-            </IconItem>
-          ))}
-        </IconList>
+        <IconList>{renderIcons()}</IconList>
       </CardStyles>
       <CarouselWrapper>
-        <Carousel>
-          {icons.map((icon, index) => (
-            <IconItem key={index}>
-              <icon.component
-                size={icon.size}
-                color={icon.color}
-              />
-            </IconItem>
-          ))}
-        </Carousel>
+        <Carousel>{renderIcons()}</Carousel>
       </CarouselWrapper>
     </>
   );

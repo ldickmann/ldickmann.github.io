@@ -68,11 +68,11 @@ const Navbar = () => {
         )} */}
         <NavList>
           <NavItem>
-            <NavLinks to="/">Home</NavLinks>
+            <NavLinks to="/home">Home</NavLinks>
           </NavItem>
-          {/* <NavItem>
-              <NavLinks to="/projects">Projetos</NavLinks>
-            </NavItem> */}
+          <NavItem>
+            <NavLinks to="/projects">Projetos</NavLinks>
+          </NavItem>
         </NavList>
         <DividerComponent
           orientation="horizontal"

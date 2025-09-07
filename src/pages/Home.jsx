@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Card from "../components/Card";
 import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
-import ParticlesComponent from "../components/Particles/particlesComponent";
 import MiniBioCard from "../components/MiniBioCard";
 import NewCard from "../components/NewCard";
 import DividerComponent from "../components/DividerComponent";
@@ -31,6 +29,15 @@ const TitleSection = styled.h2`
   color: var(--color-green);
 `;
 
+const CategoryTitle = styled.h3`
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-white);
+  margin-top: 3rem;
+  width: 100%;
+  text-align: center;
+`;
+
 const ContainerCards = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -42,16 +49,7 @@ const ContainerCards = styled.div`
 `;
 
 const Home = () => {
-  const [showHome, setShowHome] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowHome(true);
-    }, 4500); // 4.5 seconds
-    return () => clearTimeout(timer);
-  }, []);
-
-  return showHome ? (
+  return (
     <>
       <Container>
         <Navbar />
@@ -69,49 +67,54 @@ const Home = () => {
           height="2px"
           variant="solid"
         />
+
+        <CategoryTitle>Projetos Front-end</CategoryTitle>
         <ContainerCards>
           <NewCard
-            image="./images/smash-burger/home-smash-burger.png"
+            image="/images/smash-burger/home-smash-burger.png"
             alt="Smash Burger | Front End App - Vue.js"
             title="Smash Burger"
-            description="Aplicação Vue.js de delivery de hamburguers."
+            description="Simulador de delivery de hambúrgueres feito com Vue.js, focado em uma experiência de usuário fluida e interativa."
             repoUrl="https://github.com/ldickmann/smash-burguer"
           />
           <NewCard
-            image="./images/component-login.jpg"
+            image="/images/component-login.jpg"
             alt="Componente de Login"
             title="Componente de Login"
-            description="Componente de login em React.js."
+            description="Componente de login reutilizável construído com React.js, demonstrando a aplicação de formulários e validação."
             repoUrl="https://github.com/ldickmann/login-page"
             demoUrl="https://login-page-luks-dev.vercel.app/"
           />
           <NewCard
-            image="./images/djangoSGE.png"
+            image="/images/maos-de-tesoura.png"
+            alt="Aplicação Mãos de Tesoura - Vue.js"
+            title="Mãos de Tesoura - Vue.js"
+            description="Aplicação Front-end de agendamento de serviços e landing page."
+            repoUrl="https://github.com/ldickmann/maos-de-tesoura"
+            demoUrl="https://ldickmann.github.io/maos-de-tesoura/"
+          />
+          <NewCard
+            image="/images/how-arquitetura.png"
+            alt="How Arquitetura - HTML & CSS"
+            title="Projeto Integrador ADS"
+            description="Projeto de um site institucional para uma arquiteta, este sendo parte do curso de Análise e Desenvolvimento de Sistemas."
+            repoUrl="https://github.com/MALLG-Sistemas/hands-on-work-v"
+            demoUrl="https://mallg-sistemas.github.io/hands-on-work-v/"
+          />
+        </ContainerCards>
+
+        <CategoryTitle>Projetos Full-stack</CategoryTitle>
+        <ContainerCards>
+          <NewCard
+            image="/images/djangoSGE.png"
             alt="Django SGE | Full Stack App - Django, Django REST & Bootstrap"
             title="Django SGE - Django"
-            description="Aplicação Full-stack de Gerenciamento de Estoque"
+            description="Sistema de Gerenciamento de Estoque completo com Django, incluindo controle de produtos, categorias e fornecedores."
             repoUrl="https://github.com/ldickmann/djangoSGE"
-          />
-          <NewCard
-            image="./images/meteora-app.png"
-            alt="Meteora Front End App - React.js"
-            title="Meteora - React.js"
-            description="Aplicação Front End de gerenciamento de tarefas."
-            repoUrl="https://github.com/ldickmann/ReactG7-ONE/tree/main/react-context-api"
-            demoUrl="https://react-context-api-meteora.vercel.app/"
-          />
-          <NewCard
-            image="./images/django-cars-app.png"
-            alt="Django Cars App - Django"
-            title="Django Cars - Django"
-            description="Aplicação Full Stack de gerenciamento de carros."
-            repoUrl="https://github.com/ldickmann/djangoCars"
           />
         </ContainerCards>
       </SectionCards>
     </>
-  ) : (
-    <ParticlesComponent />
   );
 };
 
