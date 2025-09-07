@@ -6,7 +6,7 @@ import DividerComponent from "../DividerComponent";
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
   padding: 2rem 4rem;
@@ -24,6 +24,12 @@ const FormContainer = styled.div`
     padding: 1.5rem;
     margin: 0;
     border-radius: 10px;
+  }
+
+  @media (max-width: 430px) {
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 360px;
   }
 `;
 
@@ -45,7 +51,6 @@ const FormSubtitle = styled.p`
   text-align: center;
   font-size: 0.8rem;
   line-height: 1.6;
-
 `;
 
 const FormGroup = styled.div`
