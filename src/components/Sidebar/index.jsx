@@ -53,12 +53,12 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       <SidebarHeader></SidebarHeader>
       {isOpen && (
         <>
-          <StyledNavLink to="/" isSidebar>
+          <StyledNavLink to="/home" isSidebar>
             Home
           </StyledNavLink>
-          {/* <StyledNavLink to="/projects" isSidebar>
+          <StyledNavLink to="/projects" isSidebar>
             Projetos
-          </StyledNavLink> */}
+          </StyledNavLink>
         </>
       )}
     </SidebarContainer>
