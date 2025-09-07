@@ -3,8 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main   # dispara quando houver push na branch main
-  workflow_dispatch: # permite rodar manualmente
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -22,18 +22,21 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "18"
+
+      - name: Instalar Yarn
+        run: npm install -g yarn
 
       - name: Instalar dependências
-        run: npm install
+        run: yarn install --frozen-lockfile
 
       - name: Build do projeto
-        run: npm run build
+        run: yarn build
 
       - name: Upload artefatos de build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # ajuste para a pasta onde seu projeto gera os arquivos de build
+          path: ./dist
 
   deploy:
     needs: build
