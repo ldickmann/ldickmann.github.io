@@ -1,7 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import emailjs from '@emailjs/browser';
 import DividerComponent from "../DividerComponent";
+import { EMAIL_CONFIG, validateEmailConfig } from "../../config/emailConfig";
 
 const FormContainer = styled.div`
   display: flex;
@@ -298,12 +300,33 @@ const ContactForm = ({ onSubmit }) => {
     setIsSubmitting(true);
 
     try {
-      // Simule uma chamada de API ou use a função onSubmit fornecida
+      // Verificar se as configurações do EmailJS estão corretas
+      if (!validateEmailConfig()) {
+        throw new Error('Configurações do EmailJS não encontradas. Verifique o arquivo .env.local');
+      }
+
+      // Preparar os dados para o template do EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: EMAIL_CONFIG.TO_EMAIL,
+        reply_to: formData.email,
+      };
+
+      // Enviar email usando EmailJS
+      const response = await emailjs.send(
+        EMAIL_CONFIG.SERVICE_ID,
+        EMAIL_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAIL_CONFIG.PUBLIC_KEY
+      );
+
+      console.log('Email enviado com sucesso:', response);
+
+      // Se há uma função onSubmit personalizada, chamá-la também
       if (onSubmit) {
         await onSubmit(formData);
-      } else {
-        // Simular o delary da API
-        await new Promise((resolve) => setTimeout(resolve, 2000));
       }
 
       setShowSuccess(true);
@@ -313,10 +336,29 @@ const ContactForm = ({ onSubmit }) => {
         message: "",
       });
 
+      // Limpar qualquer erro anterior
+      setErrors({});
+
       // Ocultar mensagem de sucesso após 5 segundos
       setTimeout(() => setShowSuccess(false), 5000);
+
     } catch (error) {
-      console.error("Erro ao enviar formulário:", error);
+      console.error('Erro ao enviar email:', error);
+      
+      // Mostrar erro específico para o usuário
+      let errorMessage = 'Erro ao enviar mensagem. Tente novamente.';
+      
+      if (error.message && error.message.includes('Configurações do EmailJS')) {
+        errorMessage = 'Serviço de email não configurado. Entre em contato diretamente.';
+      } else if (error.status === 400) {
+        errorMessage = 'Dados inválidos. Verifique os campos e tente novamente.';
+      } else if (error.status === 403) {
+        errorMessage = 'Serviço de email temporariamente indisponível.';
+      }
+      
+      setErrors({
+        submit: errorMessage
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -379,6 +421,12 @@ const ContactForm = ({ onSubmit }) => {
           />
           <ErrorMessage $show={!!errors.message}>{errors.message}</ErrorMessage>
         </FormGroup>
+
+        {errors.submit && (
+          <ErrorMessage $show={true} style={{ marginBottom: '1rem' }}>
+            {errors.submit}
+          </ErrorMessage>
+        )}
 
         <SubmitButton
           type="submit"

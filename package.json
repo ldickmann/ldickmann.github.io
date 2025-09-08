@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.8.0",
     "react": "^18.3.1",

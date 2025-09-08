@@ -41,15 +41,11 @@ const FooterDivider = styled.div`
 
 const Footer = () => {
   const handleFormSubmit = async (formData) => {
-    // Aqui você pode implementar a lógica de envio do formulário
-    // Por exemplo, integração com EmailJS ou outro serviço de email
-    console.log("Dados do formulário enviados:", formData);
-
-    // Exemplo para futuras integrações:
-    // await emailjs.send('service_id', 'template_id', formData, 'user_id');
-
-    // Simular sucesso
-    return Promise.resolve();
+    // Callback opcional para analytics ou outras ações após o envio
+    console.log("Formulário enviado com sucesso:", formData);
+    
+    // Aqui você pode adicionar tracking, analytics, etc.
+    // Exemplo: gtag('event', 'contact_form_submit');
   };
 
   return (
