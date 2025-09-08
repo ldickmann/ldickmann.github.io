@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import DividerComponent from "../DividerComponent";
 import { EMAIL_CONFIG, validateEmailConfig } from "../../config/emailConfig";
 
@@ -302,7 +302,9 @@ const ContactForm = ({ onSubmit }) => {
     try {
       // Verificar se as configurações do EmailJS estão corretas
       if (!validateEmailConfig()) {
-        throw new Error('Configurações do EmailJS não encontradas. Verifique o arquivo .env.local');
+        throw new Error(
+          "Configurações do EmailJS não encontradas. Verifique o arquivo .env.local"
+        );
       }
 
       // Preparar os dados para o template do EmailJS
@@ -322,7 +324,7 @@ const ContactForm = ({ onSubmit }) => {
         EMAIL_CONFIG.PUBLIC_KEY
       );
 
-      console.log('Email enviado com sucesso:', response);
+      console.log("Email enviado com sucesso:", response);
 
       // Se há uma função onSubmit personalizada, chamá-la também
       if (onSubmit) {
@@ -341,23 +343,24 @@ const ContactForm = ({ onSubmit }) => {
 
       // Ocultar mensagem de sucesso após 5 segundos
       setTimeout(() => setShowSuccess(false), 5000);
-
     } catch (error) {
-      console.error('Erro ao enviar email:', error);
-      
+      console.error("Erro ao enviar email:", error);
+
       // Mostrar erro específico para o usuário
-      let errorMessage = 'Erro ao enviar mensagem. Tente novamente.';
-      
-      if (error.message && error.message.includes('Configurações do EmailJS')) {
-        errorMessage = 'Serviço de email não configurado. Entre em contato diretamente.';
+      let errorMessage = "Erro ao enviar mensagem. Tente novamente.";
+
+      if (error.message && error.message.includes("Configurações do EmailJS")) {
+        errorMessage =
+          "Serviço de email não configurado. Entre em contato diretamente.";
       } else if (error.status === 400) {
-        errorMessage = 'Dados inválidos. Verifique os campos e tente novamente.';
+        errorMessage =
+          "Dados inválidos. Verifique os campos e tente novamente.";
       } else if (error.status === 403) {
-        errorMessage = 'Serviço de email temporariamente indisponível.';
+        errorMessage = "Serviço de email temporariamente indisponível.";
       }
-      
+
       setErrors({
-        submit: errorMessage
+        submit: errorMessage,
       });
     } finally {
       setIsSubmitting(false);
@@ -423,7 +426,9 @@ const ContactForm = ({ onSubmit }) => {
         </FormGroup>
 
         {errors.submit && (
-          <ErrorMessage $show={true} style={{ marginBottom: '1rem' }}>
+          <ErrorMessage
+            $show={true}
+            style={{ marginBottom: "1rem" }}>
             {errors.submit}
           </ErrorMessage>
         )}
