@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import MiniBioCard from "../components/MiniBioCard";
 import NewCard from "../components/NewCard";
 import DividerComponent from "../components/DividerComponent";
+import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
   display: flex;
@@ -66,6 +67,8 @@ const ContainerCards = styled.div`
 `;
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Container>
@@ -77,7 +80,7 @@ const Home = () => {
       </Container>
       <MiniBioCard />
       <SectionCards>
-        <TitleSection>Portfólio</TitleSection>
+        <TitleSection>{t("portfolio")}</TitleSection>
         <DividerComponent
           orientation="horizontal"
           width="60px"
@@ -85,69 +88,61 @@ const Home = () => {
           variant="solid"
         />
 
-        <CategoryTitle>Projetos Front-end</CategoryTitle>
+        <CategoryTitle>{t("frontend_projects_title")}</CategoryTitle>
         <CategoryDescription>
-          Aplicações modernas focadas na experiência do usuário, desenvolvidas
-          com tecnologias como React.js e Vue.js. Cada projeto demonstra
-          diferentes aspectos do desenvolvimento front-end, desde interfaces
-          responsivas até componentes reutilizáveis.
+          {t("frontend_projects_description")}
         </CategoryDescription>
         <ContainerCards>
           <NewCard
             image="/images/smash-burger/home-smash-burger.png"
             alt="Smash Burger | Front End App - Vue.js"
-            title="Smash Burger"
-            description="Simulador de delivery de hambúrgueres feito com Vue.js, focado em uma experiência de usuário fluida e interativa."
+            title={t("smash_burger_title")}
+            description={t("smash_burger_description")}
             repoUrl="https://github.com/ldickmann/smash-burguer"
           />
           <NewCard
             image="/images/component-login.jpg"
             alt="Componente de Login"
-            title="Componente de Login"
-            description="Componente de login reutilizável construído com React.js, demonstrando a aplicação de formulários e validação."
+            title={t("login_component_title")}
+            description={t("login_component_description")}
             repoUrl="https://github.com/ldickmann/login-page"
             demoUrl="https://login-page-luks-dev.vercel.app/"
           />
           <NewCard
             image="/images/maos-de-tesoura.png"
             alt="Aplicação Mãos de Tesoura - Vue.js"
-            title="Mãos de Tesoura - Vue.js"
-            description="Aplicação Front-end de agendamento de serviços e landing page."
+            title={t("maos_de_tesoura_title")}
+            description={t("maos_de_tesoura_description")}
             repoUrl="https://github.com/ldickmann/maos-de-tesoura"
             demoUrl="https://ldickmann.github.io/maos-de-tesoura/"
           />
         </ContainerCards>
 
-        <CategoryTitle>Projetos Acadêmicos</CategoryTitle>
+        <CategoryTitle>{t("academic_projects_title")}</CategoryTitle>
         <CategoryDescription>
-          Projetos desenvolvidos durante a graduação em Análise e
-          Desenvolvimento de Sistemas, representando trabalhos colaborativos e
-          aplicação prática dos conhecimentos adquiridos no curso.
+          {t("academic_projects_description")}
         </CategoryDescription>
         <ContainerCards>
           <NewCard
             image="/images/how-arquitetura.png"
             alt="How Arquitetura - HTML & CSS"
-            title="Projeto Integrador ADS"
-            description="Projeto de um site institucional para uma arquiteta desenvolvido em grupo durante o curso de Análise e Desenvolvimento de Sistemas."
+            title={t("ads_integrator_project_title")}
+            description={t("ads_integrator_project_description")}
             repoUrl="https://github.com/MALLG-Sistemas/hands-on-work-v"
             demoUrl="https://mallg-sistemas.github.io/hands-on-work-v/"
           />
         </ContainerCards>
 
-        <CategoryTitle>Projetos Full-stack</CategoryTitle>
+        <CategoryTitle>{t("fullstack_projects_title")}</CategoryTitle>
         <CategoryDescription>
-          Aplicações completas que integram front-end e back-end, demonstrando
-          competências em desenvolvimento web integral. Projetos que abrangem
-          desde a interface do usuário até a gestão de dados e lógica de
-          negócio.
+          {t("fullstack_projects_description")}
         </CategoryDescription>
         <ContainerCards>
           <NewCard
             image="/images/djangoSGE.png"
             alt="Django SGE | Full Stack App - Django, Django REST & Bootstrap"
-            title="Django SGE - Django"
-            description="Sistema de Gerenciamento de Estoque completo com Django, incluindo controle de produtos, categorias e fornecedores."
+            title={t("django_sge_title")}
+            description={t("django_sge_description")}
             repoUrl="https://github.com/ldickmann/djangoSGE"
           />
         </ContainerCards>

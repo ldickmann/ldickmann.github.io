@@ -11,17 +11,20 @@ import {
   ContainerSocialMedia,
   ContainerImage,
 } from "./Banner.styles";
+import { useTranslation } from "react-i18next";
 
 const Banner = () => {
+  const { t } = useTranslation();
+
   return (
     <BannerContainer>
       <ContainerText>
         <HeaderContainer>
-          <Header>Hi there! I&apos;m</Header>
+          <Header>{t("hi_there")}</Header>
           <Title text={"Lucas Dickmann"} />
         </HeaderContainer>
         <FooterContainer>
-          <TitleFooter>Web Developer</TitleFooter>
+          <TitleFooter>{t("web_developer")}</TitleFooter>
         </FooterContainer>
         <ContainerSocialMedia>
           <a
