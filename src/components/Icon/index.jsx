@@ -7,10 +7,13 @@ const IconItem = styled.div`
   align-items: center;
 `;
 
-const Icon = ({ component: IconComponent, size, color }) => {
+const Icon = ({ component: IconComponent, size = 70, color = "white" }) => {
   return (
     <IconItem>
-      <IconComponent size={size} color={color} />
+      <IconComponent
+        size={size}
+        color={color}
+      />
     </IconItem>
   );
 };
@@ -19,11 +22,6 @@ Icon.propTypes = {
   component: PropTypes.elementType.isRequired,
   size: PropTypes.number,
   color: PropTypes.string,
-};
-
-Icon.defaultProps = {
-  size: 70,
-  color: "white",
 };
 
 export default Icon;
