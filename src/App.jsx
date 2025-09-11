@@ -8,6 +8,7 @@ import {
 import { Suspense, lazy } from "react";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import Footer from "./components/Footer";
 import GlobalStyle from "./styles/GlobalStyle";
 import { theme } from "./styles/theme";
@@ -23,10 +24,27 @@ const GlobalContainer = styled.div`
   width: 100%;
 `;
 
+const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: var(--color-green);
+  font-family: var(--font-secondary);
+`;
+
 const AppContent = () => {
   const location = useLocation();
+  const { ready } = useTranslation();
+
   const hideFooterRoutes = ["/intro"]; // Rotas onde o Footer não deve aparecer
   const shouldHideFooter = !hideFooterRoutes.includes(location.pathname);
+
+  // Aguarda o i18n estar pronto antes de renderizar
+  if (!ready) {
+    return <LoadingContainer>Carregando traduções...</LoadingContainer>;
+  }
 
   return (
     <>
@@ -64,7 +82,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter basename="/">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<LoadingContainer>Loading...</LoadingContainer>}>
           <AppContent />
         </Suspense>
       </BrowserRouter>
