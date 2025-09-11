@@ -31,4 +31,24 @@ export default {
   django_sge_title: "Django SGE - Django",
   django_sge_description:
     "Sistema de Gerenciamento de Estoque completo com Django, incluindo controle de produtos, categorias e fornecedores.",
+  
+  // Traduções do formulário de contato
+  contact: "Contato",
+  contact_subtitle: "Vamos conversar! Estou sempre aberto a novas oportunidades e colaborações.",
+  name_label: "Nome",
+  email_label: "Email",
+  message_label: "Mensagem",
+  name_placeholder: "Seu nome completo",
+  email_placeholder: "seu.email@exemplo.com",
+  message_placeholder: "Digite sua mensagem aqui...",
+  send_message: "Enviar Mensagem",
+  sending: "Enviando...",
+  success_message: "✅ Mensagem enviada com sucesso! Entrarei em contato em breve.",
+  
+  // Validações do formulário
+  name_required: "Nome é obrigatório",
+  email_required: "Email é obrigatório",
+  email_invalid: "Email inválido",
+  message_required: "Mensagem é obrigatória",
+  message_min_length: "Mensagem deve ter pelo menos 10 caracteres",
 };

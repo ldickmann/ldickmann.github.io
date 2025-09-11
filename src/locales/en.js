@@ -31,4 +31,24 @@ export default {
   django_sge_title: "Django SGE - Django",
   django_sge_description:
     "Complete Inventory Management System with Django, including control of products, categories, and suppliers.",
+  
+  // Contact form translations
+  contact: "Contact",
+  contact_subtitle: "Let's talk! I'm always open to new opportunities and collaborations.",
+  name_label: "Name",
+  email_label: "Email",
+  message_label: "Message",
+  name_placeholder: "Your full name",
+  email_placeholder: "your.email@example.com",
+  message_placeholder: "Type your message here...",
+  send_message: "Send Message",
+  sending: "Sending...",
+  success_message: "✅ Message sent successfully! I'll get back to you soon.",
+  
+  // Form validations
+  name_required: "Name is required",
+  email_required: "Email is required",
+  email_invalid: "Invalid email",
+  message_required: "Message is required",
+  message_min_length: "Message must be at least 10 characters long",
 };

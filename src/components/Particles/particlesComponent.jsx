@@ -1,7 +1,7 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useState } from "react";
 import { loadSlim } from "@tsparticles/slim";
-import particlesConfig from "./particles.json";
+import particlesConfig from "./particles.js";
 import styled from "styled-components";
 import TitleLetter from "../TitleLetter";
 
