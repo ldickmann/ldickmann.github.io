@@ -44,10 +44,10 @@ const Navbar = () => {
         />
         <NavList>
           <NavItem>
-            <NavLinks to="/home">{t("home")}</NavLinks>
+            <NavLinks to="/home">{t("navigation.home")}</NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to="/projects">{t("projects")}</NavLinks>
+            <NavLinks to="/projects">{t("navigation.projects")}</NavLinks>
           </NavItem>
         </NavList>
         <LanguageSwitcher />

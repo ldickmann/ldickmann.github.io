@@ -255,78 +255,84 @@ const ContactForm = memo(({ onSubmit }) => {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = t("name_required");
+      newErrors.name = t("contact.form.validation.name_required");
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = t("email_required");
+      newErrors.email = t("contact.form.validation.email_required");
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = t("email_invalid");
+      newErrors.email = t("contact.form.validation.email_invalid");
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = t("message_required");
+      newErrors.message = t("contact.form.validation.message_required");
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = t("message_min_length");
+      newErrors.message = t("contact.form.validation.message_min_length");
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   }, [formData, t]);
 
-  const handleInputChange = useCallback((e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
-    // Limpar erro quando o usuário começa a digitar
-    if (errors[name]) {
-      setErrors((prev) => ({
+  const handleInputChange = useCallback(
+    (e) => {
+      const { name, value } = e.target;
+      setFormData((prev) => ({
         ...prev,
-        [name]: "",
+        [name]: value,
       }));
-    }
-  }, [errors]);
 
-  const handleSubmit = useCallback(async (e) => {
-    e.preventDefault();
+      // Limpar erro quando o usuário começa a digitar
+      if (errors[name]) {
+        setErrors((prev) => ({
+          ...prev,
+          [name]: "",
+        }));
+      }
+    },
+    [errors]
+  );
 
-    if (!validateForm()) {
-      return;
-    }
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
 
-    setIsSubmitting(true);
-
-    try {
-      // Simule uma chamada de API ou use a função onSubmit fornecida
-      if (onSubmit) {
-        await onSubmit(formData);
-      } else {
-        // Simular o delary da API
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+      if (!validateForm()) {
+        return;
       }
 
-      setShowSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
+      setIsSubmitting(true);
 
-      // Ocultar mensagem de sucesso após 5 segundos
-      setTimeout(() => setShowSuccess(false), 5000);
-    } catch (error) {
-      console.error("Erro ao enviar formulário:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  }, [formData, onSubmit, validateForm]);
+      try {
+        // Simule uma chamada de API ou use a função onSubmit fornecida
+        if (onSubmit) {
+          await onSubmit(formData);
+        } else {
+          // Simular o delary da API
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+        }
+
+        setShowSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+
+        // Ocultar mensagem de sucesso após 5 segundos
+        setTimeout(() => setShowSuccess(false), 5000);
+      } catch (error) {
+        console.error("Erro ao enviar formulário:", error);
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [formData, onSubmit, validateForm]
+  );
 
   return (
     <FormContainer>
-      <FormTitle>{t("contact")}</FormTitle>
+      <FormTitle>{t("contact.title")}</FormTitle>
       <DividerContainer>
         <DividerComponent
           orientation="horizontal"
@@ -335,47 +341,45 @@ const ContactForm = memo(({ onSubmit }) => {
           variant="solid"
         />
       </DividerContainer>
-      <FormSubtitle>
-        {t("contact_subtitle")}
-      </FormSubtitle>
+      <FormSubtitle>{t("contact.subtitle")}</FormSubtitle>
 
       <form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlFor="name">{t("name_label")} *</Label>
+          <Label htmlFor="name">{t("contact.form.labels.name")} *</Label>
           <InputBase
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            placeholder={t("name_placeholder")}
+            placeholder={t("contact.form.placeholders.name")}
             $hasError={!!errors.name}
           />
           <ErrorMessage $show={!!errors.name}>{errors.name}</ErrorMessage>
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="email">{t("email_label")} *</Label>
+          <Label htmlFor="email">{t("contact.form.labels.email")} *</Label>
           <InputBase
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            placeholder={t("email_placeholder")}
+            placeholder={t("contact.form.placeholders.email")}
             $hasError={!!errors.email}
           />
           <ErrorMessage $show={!!errors.email}>{errors.email}</ErrorMessage>
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="message">{t("message_label")} *</Label>
+          <Label htmlFor="message">{t("contact.form.labels.message")} *</Label>
           <TextArea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-            placeholder={t("message_placeholder")}
+            placeholder={t("contact.form.placeholders.message")}
             $hasError={!!errors.message}
           />
           <ErrorMessage $show={!!errors.message}>{errors.message}</ErrorMessage>
@@ -384,12 +388,14 @@ const ContactForm = memo(({ onSubmit }) => {
         <SubmitButton
           type="submit"
           disabled={isSubmitting}>
-          {isSubmitting ? t("sending") : t("send_message")}
+          {isSubmitting
+            ? t("contact.form.buttons.sending")
+            : t("contact.form.buttons.send")}
         </SubmitButton>
       </form>
 
       <SuccessMessage $show={showSuccess}>
-        {t("success_message")}
+        {t("contact.form.messages.success")}
       </SuccessMessage>
     </FormContainer>
   );

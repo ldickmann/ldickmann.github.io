@@ -80,7 +80,7 @@ const Home = () => {
       </Container>
       <MiniBioCard />
       <SectionCards>
-        <TitleSection>{t("portfolio")}</TitleSection>
+        <TitleSection>{t("sections.portfolio")}</TitleSection>
         <DividerComponent
           orientation="horizontal"
           width="60px"
@@ -88,61 +88,63 @@ const Home = () => {
           variant="solid"
         />
 
-        <CategoryTitle>{t("frontend_projects_title")}</CategoryTitle>
+        <CategoryTitle>{t("projects.categories.frontend.title")}</CategoryTitle>
         <CategoryDescription>
-          {t("frontend_projects_description")}
+          {t("projects.categories.frontend.description")}
         </CategoryDescription>
         <ContainerCards>
           <NewCard
             image="/images/smash-burger/home-smash-burger.png"
             alt="Smash Burger | Front End App - Vue.js"
-            title={t("smash_burger_title")}
-            description={t("smash_burger_description")}
+            title={t("projects.items.smash_burger.title")}
+            description={t("projects.items.smash_burger.description")}
             repoUrl="https://github.com/ldickmann/smash-burguer"
           />
           <NewCard
             image="/images/component-login.jpg"
             alt="Componente de Login"
-            title={t("login_component_title")}
-            description={t("login_component_description")}
+            title={t("projects.items.login_component.title")}
+            description={t("projects.items.login_component.description")}
             repoUrl="https://github.com/ldickmann/login-page"
             demoUrl="https://login-page-luks-dev.vercel.app/"
           />
           <NewCard
             image="/images/maos-de-tesoura.png"
             alt="Aplicação Mãos de Tesoura - Vue.js"
-            title={t("maos_de_tesoura_title")}
-            description={t("maos_de_tesoura_description")}
+            title={t("projects.items.maos_de_tesoura.title")}
+            description={t("projects.items.maos_de_tesoura.description")}
             repoUrl="https://github.com/ldickmann/maos-de-tesoura"
             demoUrl="https://ldickmann.github.io/maos-de-tesoura/"
           />
         </ContainerCards>
 
-        <CategoryTitle>{t("academic_projects_title")}</CategoryTitle>
+        <CategoryTitle>{t("projects.categories.academic.title")}</CategoryTitle>
         <CategoryDescription>
-          {t("academic_projects_description")}
+          {t("projects.categories.academic.description")}
         </CategoryDescription>
         <ContainerCards>
           <NewCard
             image="/images/how-arquitetura.png"
             alt="How Arquitetura - HTML & CSS"
-            title={t("ads_integrator_project_title")}
-            description={t("ads_integrator_project_description")}
+            title={t("projects.items.ads_integrator.title")}
+            description={t("projects.items.ads_integrator.description")}
             repoUrl="https://github.com/MALLG-Sistemas/hands-on-work-v"
             demoUrl="https://mallg-sistemas.github.io/hands-on-work-v/"
           />
         </ContainerCards>
 
-        <CategoryTitle>{t("fullstack_projects_title")}</CategoryTitle>
+        <CategoryTitle>
+          {t("projects.categories.fullstack.title")}
+        </CategoryTitle>
         <CategoryDescription>
-          {t("fullstack_projects_description")}
+          {t("projects.categories.fullstack.description")}
         </CategoryDescription>
         <ContainerCards>
           <NewCard
             image="/images/djangoSGE.png"
             alt="Django SGE | Full Stack App - Django, Django REST & Bootstrap"
-            title={t("django_sge_title")}
-            description={t("django_sge_description")}
+            title={t("projects.items.django_sge.title")}
+            description={t("projects.items.django_sge.description")}
             repoUrl="https://github.com/ldickmann/djangoSGE"
           />
         </ContainerCards>

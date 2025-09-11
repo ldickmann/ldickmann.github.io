@@ -20,11 +20,11 @@ const Banner = () => {
     <BannerContainer>
       <ContainerText>
         <HeaderContainer>
-          <Header>{t("hi_there")}</Header>
+          <Header>{t("home.hi_there")}</Header>
           <Title text={"Lucas Dickmann"} />
         </HeaderContainer>
         <FooterContainer>
-          <TitleFooter>{t("web_developer")}</TitleFooter>
+          <TitleFooter>{t("home.web_developer")}</TitleFooter>
         </FooterContainer>
         <ContainerSocialMedia>
           <a
