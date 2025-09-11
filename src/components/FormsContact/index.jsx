@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import DividerComponent from "../DividerComponent";
 
 const FormContainer = styled.div`
@@ -238,7 +239,8 @@ const DividerContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = memo(({ onSubmit }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -249,30 +251,30 @@ const ContactForm = ({ onSubmit }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const validateForm = () => {
+  const validateForm = useCallback(() => {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Nome é obrigatório";
+      newErrors.name = t("name_required");
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email é obrigatório";
+      newErrors.email = t("email_required");
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email inválido";
+      newErrors.email = t("email_invalid");
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Mensagem é obrigatória";
+      newErrors.message = t("message_required");
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Mensagem deve ter pelo menos 10 caracteres";
+      newErrors.message = t("message_min_length");
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
+  }, [formData, t]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -286,9 +288,9 @@ const ContactForm = ({ onSubmit }) => {
         [name]: "",
       }));
     }
-  };
+  }, [errors]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -320,11 +322,11 @@ const ContactForm = ({ onSubmit }) => {
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [formData, onSubmit, validateForm]);
 
   return (
     <FormContainer>
-      <FormTitle>Contato</FormTitle>
+      <FormTitle>{t("contact")}</FormTitle>
       <DividerContainer>
         <DividerComponent
           orientation="horizontal"
@@ -334,47 +336,46 @@ const ContactForm = ({ onSubmit }) => {
         />
       </DividerContainer>
       <FormSubtitle>
-        Vamos conversar! Estou sempre aberto a novas oportunidades e
-        colaborações.
+        {t("contact_subtitle")}
       </FormSubtitle>
 
       <form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlFor="name">Nome *</Label>
+          <Label htmlFor="name">{t("name_label")} *</Label>
           <InputBase
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            placeholder="Seu nome completo"
+            placeholder={t("name_placeholder")}
             $hasError={!!errors.name}
           />
           <ErrorMessage $show={!!errors.name}>{errors.name}</ErrorMessage>
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="email">Email *</Label>
+          <Label htmlFor="email">{t("email_label")} *</Label>
           <InputBase
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            placeholder="seu.email@exemplo.com"
+            placeholder={t("email_placeholder")}
             $hasError={!!errors.email}
           />
           <ErrorMessage $show={!!errors.email}>{errors.email}</ErrorMessage>
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="message">Mensagem *</Label>
+          <Label htmlFor="message">{t("message_label")} *</Label>
           <TextArea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-            placeholder="Digite sua mensagem aqui..."
+            placeholder={t("message_placeholder")}
             $hasError={!!errors.message}
           />
           <ErrorMessage $show={!!errors.message}>{errors.message}</ErrorMessage>
@@ -383,16 +384,18 @@ const ContactForm = ({ onSubmit }) => {
         <SubmitButton
           type="submit"
           disabled={isSubmitting}>
-          {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+          {isSubmitting ? t("sending") : t("send_message")}
         </SubmitButton>
       </form>
 
       <SuccessMessage $show={showSuccess}>
-        ✅ Mensagem enviada com sucesso! Entrarei em contato em breve.
+        {t("success_message")}
       </SuccessMessage>
     </FormContainer>
   );
-};
+});
+
+ContactForm.displayName = "ContactForm";
 
 ContactForm.propTypes = {
   onSubmit: PropTypes.func,

@@ -1,4 +1,4 @@
-{
+export default {
   "autoPlay": true,
   "background": {
     "color": {
@@ -601,4 +601,4 @@
       "value": true
     }
   }
-}
+};

@@ -6,8 +6,22 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: "dist",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          i18n: [
+            "i18next",
+            "react-i18next",
+            "i18next-browser-languagedetector",
+          ],
+        },
+      },
+    },
   },
   server: {
     port: 3000,
   },
+  // Garante que arquivos JSON sejam tratados corretamente
+  assetsInclude: ["**/*.json"],
 });

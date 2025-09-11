@@ -2,6 +2,8 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import NavLinks from "../NavLinks";
 import DividerComponent from "../DividerComponent";
+import LanguageSwitcher from "../LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const HeaderNavbar = styled.header`
   width: 100%;
@@ -10,6 +12,7 @@ const HeaderNavbar = styled.header`
 const Navigation = styled.nav`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
   padding: 0 2rem;
   width: 100%;
@@ -28,6 +31,8 @@ const NavItem = styled.li`
 `;
 
 const Navbar = () => {
+  const { t } = useTranslation();
+
   return (
     <HeaderNavbar>
       <Navigation>
@@ -39,12 +44,13 @@ const Navbar = () => {
         />
         <NavList>
           <NavItem>
-            <NavLinks to="/home">Home</NavLinks>
+            <NavLinks to="/home">{t("home")}</NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to="/projects">Projetos</NavLinks>
+            <NavLinks to="/projects">{t("projects")}</NavLinks>
           </NavItem>
         </NavList>
+        <LanguageSwitcher />
         <DividerComponent
           orientation="horizontal"
           width="100%"
