@@ -45,7 +45,7 @@ const MiniBioCard = () => {
 
   return (
     <BioContainer>
-      <BioTitle>{t("about_me")}</BioTitle>
+      <BioTitle>{t("sections.about_me")}</BioTitle>
       <ContainerDivider>
         <DividerComponent
           orientation="horizontal"
@@ -54,7 +54,7 @@ const MiniBioCard = () => {
           variant="solid"
         />
       </ContainerDivider>
-      <BioText>{t("about_me_text")}</BioText>
+      <BioText>{t("about.description")}</BioText>
     </BioContainer>
   );
 };

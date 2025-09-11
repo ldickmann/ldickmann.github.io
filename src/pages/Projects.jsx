@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import NewCard from "../components/NewCard";
 import DividerComponent from "../components/DividerComponent";
 import Navbar from "../components/Navbar";
@@ -39,11 +40,13 @@ const ContainerCards = styled.div`
 `;
 
 const Projects = () => {
+  const { t } = useTranslation();
+
   return (
     <PageContainer>
       <Navbar />
       <SectionCards>
-        <TitleSection>Projetos</TitleSection>
+        <TitleSection>{t("projects.title")}</TitleSection>
         <DividerComponent
           orientation="horizontal"
           width="60px"
@@ -54,38 +57,38 @@ const Projects = () => {
           <NewCard
             image="/images/smash-burger/home-smash-burger.png"
             alt="Smash Burger | Front End App - Vue.js"
-            title="Smash Burger"
-            description="Aplicação Vue.js de delivery de hamburguers."
+            title={t("projects.items.smash_burger.title")}
+            description={t("projects.items.smash_burger.description")}
             repoUrl="https://github.com/ldickmann/smash-burguer"
           />
           <NewCard
             image="/images/component-login.jpg"
             alt="Componente de Login"
-            title="Componente de Login"
-            description="Componente de login em React.js."
+            title={t("projects.items.login_component.title")}
+            description={t("projects.items.login_component.description")}
             repoUrl="https://github.com/ldickmann/login-page"
             demoUrl="https://login-page-luks-dev.vercel.app/"
           />
           <NewCard
             image="/images/djangoSGE.png"
             alt="Django SGE | Full Stack App - Django, Django REST & Bootstrap"
-            title="Django SGE - Django"
-            description="Aplicação Full-stack de Gerenciamento de Estoque"
+            title={t("projects.items.django_sge.title")}
+            description={t("projects.items.django_sge.description")}
             repoUrl="https://github.com/ldickmann/djangoSGE"
           />
           <NewCard
             image="/images/maos-de-tesoura.png"
             alt="Aplicação Mãos de Tesoura - Vue.js"
-            title="Mãos de Tesoura - Vue.js"
-            description="Aplicação Front-end de agendamento de serviços e landing page."
+            title={t("projects.items.maos_de_tesoura.title")}
+            description={t("projects.items.maos_de_tesoura.description")}
             repoUrl="https://github.com/ldickmann/maos-de-tesoura"
             demoUrl="https://ldickmann.github.io/maos-de-tesoura/"
           />
           <NewCard
             image="/images/django-cars-app.png"
             alt="Django Cars App - Django"
-            title="Django Cars - Django"
-            description="Aplicação Full Stack de gerenciamento de carros."
+            title={t("projects.items.django_cars.title")}
+            description={t("projects.items.django_cars.description")}
             repoUrl="https://github.com/ldickmann/djangoCars"
           />
         </ContainerCards>
